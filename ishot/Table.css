@@ -1,0 +1,27 @@
+.TablePr
+{
+  border: 1px;
+  border-collapse: collapse;
+  border-color: black;
+}
+
+.TablePr .NameStore
+{
+  font-weight: bold;
+}
+
+.TablePr .Line
+{
+    font-weight: 100;
+    min-width: 50px;
+}
+
+.TablePr .NameStore
+{
+    margin-bottom: 15px;
+}
+
+.TablePr .Product
+{
+    padding-right: 20px;
+}
