@@ -1,6 +1,6 @@
 .TablePr
 {
-  border: 1px;
+  /*border: solid black 1px;*/
   border-collapse: collapse;
   border-color: black;
 }
@@ -12,16 +12,32 @@
 
 .TablePr .Line
 {
-    font-weight: 100;
-    min-width: 50px;
+  font-weight: 100;
+  min-width: 50px;
+  border: solid black 1px;
+  text-align: center;
+  padding: 0px;
+  border-spacing: 0px;
 }
 
 .TablePr .NameStore
 {
-    margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .TablePr .Product
 {
-    padding-right: 20px;
+  padding: 0 20px 0 5px;
+  text-align: left;
+  border: solid black 1px;
+}
+
+.TablePr .Image
+{
+  width: 70px;
+}
+
+.TablePr .Foot
+{
+  border-spacing: 0px;
 }

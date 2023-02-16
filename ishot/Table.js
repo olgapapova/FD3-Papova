@@ -22,13 +22,18 @@ var TablePr = React.createClass({
         React.DOM.tr({key:v.code,className:'Line'},
           React.DOM.td({className:'Product'},v.title),
           React.DOM.td({className:'Line'},v.price),
-          React.DOM.td({className:'Line'},v.foto),
+          React.DOM.td({className:'Line'},
+            React.DOM.img({className:'Image', src: v.foto})
+          ),
           React.DOM.td({className:'Line'},v.count),
         )
         );
       return React.DOM.table( {className:'TablePr'},
         React.DOM.caption( {className:'NameStore'}, this.props.storeName ),
-        cellsContents
+        React.DOM.thead( null),
+        React.DOM.tbody( null),
+        React.DOM.tfoot( {className:'Foot'}, cellsContents
+        )
       );
     },
   
