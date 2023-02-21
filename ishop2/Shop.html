@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+    <title>ishop</title>
+  </head>
+  <body>
+
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+     
+    <script src="Shop.js"></script>
+    <link rel="stylesheet" type="text/css" href="Shop.css" />
+    <script src="Product.js"></script>
+    <link rel="stylesheet" type="text/css" href="Product.css" />
+
+    <script>
+      "use strict";
+
+      var storeNameTxt='ТЦ "Корона"';
+      var columnNameArr=[{titleZ:'Название',priceZ:'Цена,p',codeZ:0,fotoZ:'Фото',countZ:'Кол-во', control:'Контроль'}]
+      var productsListArr=[ 
+        {title:'Шоколад "Nestle" молочный, шт',price:'3,5p',code:1,foto:"img/ch.jpg",count:518}, 
+        {title:'Кофе молотый "STARBUCKS", шт',price:'23,7p',code:2,foto:"img/coffee.jpg",count:325}, 
+        {title:'Яблоки "Golden", кг',price:'5,9p',code:3,foto:"img/apple.jpg",count:280}, 
+        {title:'Вода питьевая "Darida", шт',price:'3,1p',code:4,foto:"img/water.jpg",count:97}, 
+        {title:'Пюре детское "Агуша", шт',price:'2,6p',code:5,foto:"img/foodch.jpg",count:810}, 
+        {title:'Бананы, кг',price:'6,2p',code:6,foto:"img/banana.jpg",count:143}
+      ];
+
+      ReactDOM.render(
+        React.createElement(Shop,{storeName:storeNameTxt, productsList:productsListArr, columnName:columnNameArr}), 
+        document.getElementById("container") 
+      );
+
+    </script>
+  </body>
+</html>
