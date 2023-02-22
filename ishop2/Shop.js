@@ -28,7 +28,7 @@ var Shop = React.createClass({
     getInitialState: function() {
       return { 
         productSelectedCode: null,
-        productSelectedCodeDel: null,
+        productsListSt: this.props.productsList,
       };
     },
 
@@ -37,7 +37,8 @@ var Shop = React.createClass({
     },
 
     productDelete: function(code) {
-      this.setState( {productSelectedCodeDel:code}, ()=> {console.log (this.state.productSelectedCodeDel)});
+      var productListFilt=this.state.productsListSt.filter(s => code !== s.code);
+      this.setState( {productsListSt:productListFilt} )
     },
   
     render: function() {
@@ -52,7 +53,7 @@ var Shop = React.createClass({
         ),
       );
 
-      var cellsContents=this.props.productsList.map( v =>
+      var cellsContents=this.state.productsListSt.map( v =>
         React.createElement(Product,{key:v.code,
           count:v.count,
           title:v.title,
@@ -65,6 +66,7 @@ var Shop = React.createClass({
           productSelectedCodDel:this.state.productSelectedCodeDel,
         }),
         );
+
       return React.DOM.table( {className:'Shop'},
         React.DOM.caption( {className:'NameStore'}, this.props.storeName ),
         React.DOM.thead( null),

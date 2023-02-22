@@ -20,30 +20,29 @@ var Product = React.createClass({
     },
 
     productDel: function(EO) {
-      this.props.cbProductSelectDel(this.props.code);
-      console.log("product: "+this.props.code);
+      var qv=confirm ('Вы уверены что хотите удалить данный товар?');
+      if (qv) {
+        this.props.cbProductSelectDel(this.props.code);
+        console.log("product: "+this.props.code);
+      }
+      else
+        return;
     },
   
     render: function() {
 
-      if (this.props.productSelectedCodDel===this.props.code) {
-        return null
-      }
-      else {
-        return React.DOM.tr((this.props.code===this.props.productSelectedCod)?{className:'LineCl',
+      return React.DOM.tr((this.props.code===this.props.productSelectedCod)?{className:'LineCl',
         onClick:this.productClicked}:{className:'Line',onClick:this.productClicked},
-          React.DOM.td({className:'Product'},this.props.title),
-          React.DOM.td({className:'Line'},this.props.price),
-          React.DOM.td({className:'Line'},
+        React.DOM.td({className:'Product'},this.props.title),
+        React.DOM.td({className:'Line'},this.props.price),
+        React.DOM.td({className:'Line'},
           React.DOM.img({className:'Image', src: this.props.foto})
         ),
         React.DOM.td({className:'Line'},this.props.count),
         React.DOM.td({className:'Button'},
-          React.DOM.input({type:'button',value:'Delete',onClick:this.productDel},
-          ),
-        )
-        )
-      }
+          React.DOM.input({type:'button',value:'Delete',onClick:this.productDel}),
+      )
+      )
     },
   
   });
