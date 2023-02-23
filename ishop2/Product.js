@@ -20,6 +20,7 @@ var Product = React.createClass({
     },
 
     productDel: function(EO) {
+      EO.stopPropagation();
       var qv=confirm ('Вы уверены что хотите удалить данный товар?');
       if (qv) {
         this.props.cbProductSelectDel(this.props.code);
