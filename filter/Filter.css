@@ -1,3 +1,20 @@
-.Filter {
+.Filter 
+{
     
+}
+
+.Filter .ListCl
+{
+   width: 240px; 
+   margin-top: 10px;
+}
+
+.Filter .CheckboxCl
+{
+    margin-right: 7px; 
+}
+
+.Filter .TextCl
+{
+   margin-right: 8px; 
 }
