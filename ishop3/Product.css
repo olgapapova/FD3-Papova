@@ -1,0 +1,29 @@
+.Shop .Line
+{
+  font-weight: 100;
+  min-width: 50px;
+  border: solid black 1px;
+  text-align: center;
+  padding: 0px;
+  line-height: 0px;
+}
+
+.Shop .LineCl {
+  background-color: rgb(232, 110, 110);
+  border: solid black 1px;
+  text-align: center;
+  line-height: 0px;
+}
+
+.Shop .Product
+{
+  padding: 0 20px 0 5px;
+  text-align: left;
+  border: solid black 1px;
+  min-width: 250px;
+}
+
+.Shop .Image
+{
+  width: 60px;
+}
