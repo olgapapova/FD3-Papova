@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import './Shop.css';
 
 import Product from './Product';
-import Form from './Form';
+import CardProduct from './CardProduct';
+//import Form from './Form';
 
 class Shop extends React.Component {
   
@@ -39,9 +40,12 @@ class Shop extends React.Component {
 
     productSelected= (code)=> {
       this.setState( {productSelectedCode:code}, ()=> {
-        let selectProduct=this.state.productsListSt.find(el => el.code===this.state.productSelectedCode);
-        this.setState( {productInfo:selectProduct}, ()=> {console.log ('productInfo'+this.state.productInfo)});
-      })
+        console.log("cod"+this.state.productSelectedCode)
+        let selectProductArr=[this.state.productsListSt.find(el => el.code===this.state.productSelectedCode)];
+        console.log("productInfoArr"+selectProductArr[0].title);
+        this.setState( {productInfo:selectProductArr}, ()=> {console.log("productInfo"+this.state.productInfo[0].price)});
+      }
+      )
     };
 
     productDelete= (code)=> {
@@ -91,12 +95,7 @@ class Shop extends React.Component {
       }
       {
         this.state.productSelectedCode &&
-        <div className='CardProduct'>
-          <h2 className='CardTitle'> Карточка продукта: </h2>
-          <span className='CardProduct'> {this.state.productInfo.title} </span>
-          <br/>
-          <span className='CardProduct'> Price: {this.state.productInfo.price} </span>
-        </div> 
+        <CardProduct info={this.state.productInfo}/> 
       }
       </div>
       );

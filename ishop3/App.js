@@ -3,7 +3,7 @@
       import React from 'react';
       import ReactDOM from 'react-dom';
 
-      import Shop from './Shop';
+      import Shop from './components/Shop';
 
       var storeNameTxt='ТЦ "Корона"';
       var columnNameArr=[{titleZ:'Название',priceZ:'Цена,p',codeZ:0,fotoZ:'Фото',countZ:'Кол-во', control:'Контроль'}]

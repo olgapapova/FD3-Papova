@@ -30562,9 +30562,9 @@ var _Product = __webpack_require__(26);
 
 var _Product2 = _interopRequireDefault(_Product);
 
-var _Form = __webpack_require__(28);
+var _CardProduct = __webpack_require__(28);
 
-var _Form2 = _interopRequireDefault(_Form);
+var _CardProduct2 = _interopRequireDefault(_CardProduct);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30573,6 +30573,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+//import Form from './Form';
 
 var Shop = function (_React$Component) {
   _inherits(Shop, _React$Component);
@@ -30594,11 +30596,13 @@ var Shop = function (_React$Component) {
       productInfo: null
     }, _this.productSelected = function (code) {
       _this.setState({ productSelectedCode: code }, function () {
-        var selectProduct = _this.state.productsListSt.find(function (el) {
+        console.log("cod" + _this.state.productSelectedCode);
+        var selectProductArr = [_this.state.productsListSt.find(function (el) {
           return el.code === _this.state.productSelectedCode;
-        });
-        _this.setState({ productInfo: selectProduct }, function () {
-          console.log('productInfo' + _this.state.productInfo);
+        })];
+        console.log("productInfoArr" + selectProductArr[0].title);
+        _this.setState({ productInfo: selectProductArr }, function () {
+          console.log("productInfo" + _this.state.productInfo[0].price);
         });
       });
     }, _this.productDelete = function (code) {
@@ -30692,30 +30696,7 @@ var Shop = function (_React$Component) {
           )
         ),
         this.state.productEdit === null ? _react2.default.createElement('input', { type: 'button', value: 'New product', disabled: this.state.disabledNewSt, onClick: this.productNewPr }) : null,
-        this.state.productSelectedCode && _react2.default.createElement(
-          'div',
-          { className: 'CardProduct' },
-          _react2.default.createElement(
-            'h2',
-            { className: 'CardTitle' },
-            ' \u041A\u0430\u0440\u0442\u043E\u0447\u043A\u0430 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0430: '
-          ),
-          _react2.default.createElement(
-            'span',
-            { className: 'CardProduct' },
-            ' ',
-            this.state.productInfo.title,
-            ' '
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'span',
-            { className: 'CardProduct' },
-            ' Price: ',
-            this.state.productInfo.price,
-            ' '
-          )
-        )
+        this.state.productSelectedCode && _react2.default.createElement(_CardProduct2.default, { info: this.state.productInfo })
       );
     }
   }]);
@@ -31809,7 +31790,7 @@ var Product = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Product.__proto__ || Object.getPrototypeOf(Product)).call.apply(_ref, [this].concat(args))), _this), _this.productClicked = function (EO) {
-      _this.props.cbProductSelect(_this.props.code, _this.props.title, _this.props.price);
+      _this.props.cbProductSelect(_this.props.code);
     }, _this.productDel = function (EO) {
       EO.stopPropagation();
       var qv = confirm('Вы уверены что хотите удалить данный товар?');
@@ -31817,8 +31798,6 @@ var Product = function (_React$Component) {
         _this.props.cbProductSelectDel(_this.props.code);
         console.log("product: " + _this.props.code);
       }
-      /*else
-        return;*/
     }, _this.productEd = function (EO) {}, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -31920,74 +31899,56 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Form = function (_React$Component) {
-  _inherits(Form, _React$Component);
+var CardProduct = function (_React$Component) {
+  _inherits(CardProduct, _React$Component);
 
-  function Form() {
-    _classCallCheck(this, Form);
+  function CardProduct() {
+    _classCallCheck(this, CardProduct);
 
-    return _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (CardProduct.__proto__ || Object.getPrototypeOf(CardProduct)).apply(this, arguments));
   }
 
-  _createClass(Form, [{
+  _createClass(CardProduct, [{
     key: 'render',
     value: function render() {
 
       return _react2.default.createElement(
         'div',
-        { className: 'EditProduct' },
+        { className: 'CardProduct' },
         _react2.default.createElement(
           'h2',
           { className: 'CardTitle' },
-          ' \u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0430: '
+          ' \u041A\u0430\u0440\u0442\u043E\u0447\u043A\u0430 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0430: '
         ),
         _react2.default.createElement(
           'span',
-          { className: 'EditProduct' },
-          ' ID: ',
-          this.props.productEditF,
+          { className: 'CardProduct' },
+          ' ',
           ' '
         ),
         _react2.default.createElement('br', null),
         _react2.default.createElement(
-          'label',
-          null,
-          '\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435:',
-          _react2.default.createElement('input', { className: 'Lab1', tipe: 'text', name: 'nameProd', value: this.props.title, onChange: this.editValProduct })
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'label',
-          null,
-          '\u0426\u0435\u043D\u0430:',
-          _react2.default.createElement('input', { className: 'Lab2', tipe: 'text', name: 'priceProd', value: this.props.price, onChange: this.editValProduct })
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'label',
-          null,
-          'URL:',
-          _react2.default.createElement('input', { className: 'Lab3', tipe: 'text', name: 'URLProd', value: this.props.foto, onChange: this.editValProduct })
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'label',
-          null,
-          '\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E:',
-          _react2.default.createElement('input', { className: 'Lab4', tipe: 'text', name: 'countProd', value: this.props.count, onChange: this.editValProduct })
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('input', { type: 'button', value: 'Save', onClick: this.productSave }),
-        _react2.default.createElement('input', { type: 'button', value: 'Cancel', onClick: this.prCancel })
+          'span',
+          { className: 'CardProduct' },
+          ' Price:  '
+        )
       );
     }
   }]);
 
-  return Form;
+  return CardProduct;
 }(_react2.default.Component);
 
-Form.propTypes = {};
-exports.default = Form;
+CardProduct.propTypes = {
+  info: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    code: _propTypes2.default.number.isRequired,
+    count: _propTypes2.default.number.isRequired,
+    title: _propTypes2.default.string.isRequired,
+    price: _propTypes2.default.string.isRequired,
+    foto: _propTypes2.default.string
+  }))
+};
+exports.default = CardProduct;
 
 /***/ }),
 /* 29 */

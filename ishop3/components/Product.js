@@ -19,7 +19,7 @@ class Product extends React.Component {
     };
 
     productClicked= (EO)=> {
-      this.props.cbProductSelect(this.props.code, this.props.title, this.props.price);
+      this.props.cbProductSelect(this.props.code);
     };
 
     productDel= (EO)=> {
@@ -29,8 +29,6 @@ class Product extends React.Component {
         this.props.cbProductSelectDel(this.props.code);
         console.log("product: "+this.props.code);
       }
-      /*else
-        return;*/
     };
 
     productEd= (EO)=> {
