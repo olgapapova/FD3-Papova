@@ -15,7 +15,7 @@ class Product extends React.Component {
         cbProductSelectDel: PropTypes.func.isRequired,
         productSelectedCod: PropTypes.number,
         productSelectedCodDel: PropTypes.number,
-
+        cbproductEdit:PropTypes.func.isRequired,
     };
 
     productClicked= (EO)=> {
@@ -32,7 +32,8 @@ class Product extends React.Component {
     };
 
     productEd= (EO)=> {
-      
+      EO.stopPropagation();
+      this.props.cbproductEdit(this.props.code);
     };
   
     render() {

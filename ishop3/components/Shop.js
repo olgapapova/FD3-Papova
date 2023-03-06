@@ -5,7 +5,7 @@ import './Shop.css';
 
 import Product from './Product';
 import CardProduct from './CardProduct';
-//import Form from './Form';
+import Form from './Form';
 
 class Shop extends React.Component {
   
@@ -36,19 +36,33 @@ class Shop extends React.Component {
         productSelectedCode: null,
         productsListSt: this.props.productsList,
         productInfo:null,
+        cardMode:0,      // 0-ничего, 1-просмотр, 2-редактирование, 3-добавление
+        productEdit:null,
     };
 
-    productSelected= (code)=> {
-      this.setState( {productSelectedCode:code}, ()=> {
-        console.log("cod"+this.state.productSelectedCode)
-        let selectProductArr=[this.state.productsListSt.find(el => el.code===this.state.productSelectedCode)];
-        console.log("productInfoArr"+selectProductArr[0].title);
-        this.setState( {productInfo:selectProductArr}, ()=> {console.log("productInfo"+this.state.productInfo[0].price)});
-      }
-      )
+    productSelected=(cod)=> {
+      let selectProductArr=[this.state.productsListSt.find(el => el.code===cod)];
+      this.setState({productSelectedCode:cod, productInfo:selectProductArr, cardMode:1});
     };
 
-    productDelete= (code)=> {
+    productEdit=(cod)=> {
+      let editProductArr=[this.state.productsListSt.find(el => el.code===cod)];
+      this.setState({productEdit:cod, productInfo:editProductArr, cardMode:2, productSelectedCode:null});
+    };
+
+    productSave=(cod, objInfo)=> {
+      let saveProduct=this.state.productsListSt.map(el => {
+        if (el.code===cod){
+          el.title=objInfo.name;
+          el.price=objInfo.price;
+          el.foto=objInfo.url;
+          el.count=objInfo.count;
+        }
+      });
+      this.setState({productsListSt:saveProduct});
+    }
+
+    productDelete=(code)=> {
       var productListFilt=this.state.productsListSt.filter(s => code !== s.code);
       this.setState( {productsListSt:productListFilt} )
     };
@@ -74,6 +88,7 @@ class Shop extends React.Component {
           foto={v.foto}
           cbProductSelect={this.productSelected}
           cbProductSelectDel={this.productDelete}
+          cbproductEdit={this.productEdit}
           productSelectedCod={this.state.productSelectedCode}
           productSelectedCodDel={this.state.productSelectedCodeDel}/>
         );
@@ -94,8 +109,15 @@ class Shop extends React.Component {
       :null
       }
       {
-        this.state.productSelectedCode &&
-        <CardProduct info={this.state.productInfo}/> 
+        (this.state.productSelectedCode && this.state.cardMode===1) &&
+        <CardProduct title={this.state.productInfo[0].title}
+          price={this.state.productInfo[0].price}/> 
+      }
+      {
+        (this.state.productEdit && this.state.cardMode===2) &&
+        <Form key={this.state.productEdit}
+          productInfo={this.state.productInfo}
+          cbProductSave={this.productSave}/> 
       }
       </div>
       );

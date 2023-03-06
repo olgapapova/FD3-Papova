@@ -6,15 +6,8 @@ import './CardProduct.css';
 class CardProduct extends React.Component {
   
   static propTypes= {
-    info: PropTypes.arrayOf(   
-         PropTypes.shape({
-           code: PropTypes.number.isRequired,
-           count: PropTypes.number.isRequired,
            title: PropTypes.string.isRequired,
            price: PropTypes.string.isRequired,
-           foto: PropTypes.string,
-         })
-    )
     };
   
     render() {
@@ -22,9 +15,9 @@ class CardProduct extends React.Component {
       return (
         <div className='CardProduct'>
           <h2 className='CardTitle'> Карточка продукта: </h2>
-          <span className='CardProduct'> {this.props.info[0].price} </span>
+          <span className='CardProduct'> {this.props.title} </span>
           <br/>
-          <span className='CardProduct'> Price:  </span>
+          <span className='CardProduct'> Price: {this.props.price} </span>
         </div>
       )
     }
