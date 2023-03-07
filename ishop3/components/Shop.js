@@ -10,13 +10,13 @@ import Form from './Form';
 class Shop extends React.Component {
   
     static propTypes= {
-      storeName: PropTypes.string.isRequired, // название магазина
+      storeName: PropTypes.string.isRequired,
       productsList: PropTypes.arrayOf(    // список продуктов
          PropTypes.shape({
            code: PropTypes.number.isRequired,
            count: PropTypes.number.isRequired,
            title: PropTypes.string.isRequired,
-           price: PropTypes.string.isRequired,
+           price: PropTypes.number.isRequired,
            foto: PropTypes.string,
          })
        ),
@@ -38,11 +38,16 @@ class Shop extends React.Component {
         productInfo:null,
         cardMode:0,      // 0-ничего, 1-просмотр, 2-редактирование, 3-добавление
         productEdit:null,
+        maxCodeProduct:null,
+        validSt:true,
+        changedValSt: false,
     };
 
     productSelected=(cod)=> {
+      if (this.state.cardMode===3 || this.state.changedValSt===true)
+        return;
       let selectProductArr=[this.state.productsListSt.find(el => el.code===cod)];
-      this.setState({productSelectedCode:cod, productInfo:selectProductArr, cardMode:1});
+      this.setState({productSelectedCode:cod, productInfo:selectProductArr, cardMode:1, productEdit:null});
     };
 
     productEdit=(cod)=> {
@@ -51,20 +56,48 @@ class Shop extends React.Component {
     };
 
     productSave=(cod, objInfo)=> {
-      let saveProduct=this.state.productsListSt.map(el => {
-        if (el.code===cod){
-          el.title=objInfo.name;
-          el.price=objInfo.price;
-          el.foto=objInfo.url;
-          el.count=objInfo.count;
-        }
-      });
-      this.setState({productsListSt:saveProduct});
-    }
+      let newProductsListSt=this.state.productsListSt.slice();
+      let productIndex=newProductsListSt.findIndex(el=> el.code===cod);
+      if (productIndex===-1)
+        return;
+      let newProduct={...newProductsListSt[productIndex]}
+      newProduct.title=objInfo.name;
+      newProduct.price=objInfo.price;
+      newProduct.foto=objInfo.url;
+      newProduct.count=objInfo.count;
+      newProductsListSt[productIndex]=newProduct;
+      this.setState({productsListSt:newProductsListSt, cardMode:0, changedValSt:false});
+    };
+
+    newProductSave=(objInfo)=> {
+      let newProductsList=this.state.productsListSt.slice();
+      newProductsList.push(objInfo);
+      console.log("objInfo"+objInfo.title);
+      this.setState({productsListSt:newProductsList, cardMode:0, changedValSt:false});
+    };
 
     productDelete=(code)=> {
       var productListFilt=this.state.productsListSt.filter(s => code !== s.code);
-      this.setState( {productsListSt:productListFilt} )
+      this.setState( {productsListSt:productListFilt, cardMode:0} )
+    };
+
+    productCancel=()=> {
+      this.setState({cardMode:0, validSt:true});
+    };
+
+    productNew=()=> {
+      let maxCode=this.state.productsListSt.reduce((r,v)=> {return ((v.code>r)?v.code:r)},0);
+      this.setState({maxCodeProduct:maxCode+1}, ()=>{let newProductList=[{code:this.state.maxCodeProduct, title:"", price:"", foto:"", count:""}];
+      this.setState({productInfo:newProductList, cardMode:3, productEdit:null, productSelectedCode:null});});
+      
+    };
+
+    valid=(val)=> {
+      this.setState({validSt:val});
+    };
+
+    changedVal=()=> {
+      this.setState({changedValSt:true});
     };
 
     render() {
@@ -90,7 +123,10 @@ class Shop extends React.Component {
           cbProductSelectDel={this.productDelete}
           cbproductEdit={this.productEdit}
           productSelectedCod={this.state.productSelectedCode}
-          productSelectedCodDel={this.state.productSelectedCodeDel}/>
+          productEdit={this.state.productEdit}
+          validSt={this.state.validSt}
+          changedValSt={this.state.changedValSt}
+        />
         );
 
       return (
@@ -104,9 +140,9 @@ class Shop extends React.Component {
               {cellsContents}
             </tfoot>
       </table>
-      {(this.state.productEdit ===null)?
-        <input type='button' value='New product' disabled={this.state.disabledNewSt} onClick={this.productNewPr}/>
-      :null
+      {
+        (this.state.cardMode===0 || this.state.cardMode===1) &&
+        <input type='button' value='New product' disabled={!this.state.validSt} onClick={this.productNew}/>
       }
       {
         (this.state.productSelectedCode && this.state.cardMode===1) &&
@@ -117,7 +153,22 @@ class Shop extends React.Component {
         (this.state.productEdit && this.state.cardMode===2) &&
         <Form key={this.state.productEdit}
           productInfo={this.state.productInfo}
-          cbProductSave={this.productSave}/> 
+          cbProductSave={this.productSave}
+          cbNewProductSave={this.newProductSave}
+          cbProductCancel={this.productCancel}
+          cbvalid={this.valid}
+          cbChangedVal={this.changedVal}/> 
+      }
+      {
+        (this.state.cardMode===3) &&
+        <Form key={this.state.maxCodeProduct}
+          productInfo={this.state.productInfo}
+          cbNewProductSave={this.newProductSave}
+          cbProductSave={this.productSave}
+          cbProductCancel={this.productCancel}
+          cardMode={this.state.cardMode}
+          cbvalid={this.valid}
+          cbChangedVal={this.changedVal}/> 
       }
       </div>
       );

@@ -9,14 +9,21 @@ class Product extends React.Component {
         code: PropTypes.number.isRequired,
         count: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
-        price: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
         foto: PropTypes.string,
         cbProductSelect: PropTypes.func.isRequired,
         cbProductSelectDel: PropTypes.func.isRequired,
         productSelectedCod: PropTypes.number,
         productSelectedCodDel: PropTypes.number,
         cbproductEdit:PropTypes.func.isRequired,
+        productEdit:PropTypes.number,
+        validSt:PropTypes.bool.isRequired,
+        changedValSt:PropTypes.bool.isRequired,
     };
+
+    state={
+      validButton: true,
+    }
 
     productClicked= (EO)=> {
       this.props.cbProductSelect(this.props.code);
@@ -32,12 +39,14 @@ class Product extends React.Component {
     };
 
     productEd= (EO)=> {
+      if (this.props.changedValSt===true)
+         return;
       EO.stopPropagation();
       this.props.cbproductEdit(this.props.code);
     };
   
     render() {
-      let clNameCl=(this.props.code===this.props.productSelectedCod)? 'LineCl' : 'Line'
+      let clNameCl=(this.props.code===this.props.productSelectedCod || this.props.code===this.props.productEdit)? 'LineCl' : 'Line'
 
       return (
       <tr className={clNameCl} onClick={this.productClicked}>
@@ -48,8 +57,8 @@ class Product extends React.Component {
         </td>
         <td className='Line'> {this.props.count} </td>
         <td className='Button'>
-          <input type='button' value='Edit' onClick={this.productEd}/>
-          <input type='button' value='Delete' onClick={this.productDel}/>
+          <input type='button' value='Edit' disabled={!this.props.validSt} onClick={this.productEd}/>
+          <input type='button' value='Delete' disabled={!this.props.validSt} onClick={this.productDel}/>
         </td> 
       </tr>
       )

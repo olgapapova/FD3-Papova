@@ -8,16 +8,21 @@
 }
 
 .Shop .Lab2 {
-  margin-left: 40px;
+  margin-left: 51px;
   width: 200px;
 }
 
 .Shop .Lab3 {
-  margin-left: 35px;
+  margin-left: 54px;
   width: 200px;
 }
 
 .Shop .Lab4 {
-  margin-left: 15px;
+  margin-left: 7px;
   width: 200px;
+}
+
+.Shop .Valid {
+  color: red;
+  
 }
