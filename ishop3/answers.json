@@ -1,8 +1,8 @@
 [ 
-    {"title":"Шоколад 'Nestle' молочный, шт","price":"3,5p","code":1,"foto":"img/ch.jpg","count":518}, 
-    {"title":"Кофе молотый 'STARBUCKS', шт","price":"23,7p","code":2,"foto":"img/coffee.jpg","count":325}, 
-    {"title":"Яблоки 'Golden', кг","price":"5,9p","code":3,"foto":"img/apple.jpg","count":280}, 
-    {"title":"Вода питьевая 'Darida', шт","price":"3,1p","code":4,"foto":"img/water.jpg","count":97}, 
-    {"title":"Пюре детское 'Агуша', шт","price":"2,6p","code":5,"foto":"img/foodch.jpg","count":810}, 
-    {"title":"Бананы, кг","price":"6,2p","code":6,"foto":"img/banana.jpg","count":143}
+    {"title":"Шоколад 'Nestle' молочный, шт", "price":3, "code":1, "foto":"img/ch.jpg", "count":518}, 
+    {"title":"Кофе молотый 'STARBUCKS', шт", "price":23, "code":2, "foto":"img/coffee.jpg", "count":325}, 
+    {"title":"Яблоки 'Golden', кг", "price":5, "code":3, "foto":"img/apple.jpg", "count":280}, 
+    {"title":"Вода питьевая 'Darida', шт", "price":3, "code":4, "foto":"img/water.jpg", "count":97}, 
+    {"title":"Пюре детское 'Агуша', шт", "price":2, "code":5, "foto":"img/foodch.jpg", "count":810}, 
+    {"title":"Бананы, кг", "price":6, "code":6, "foto":"img/banana.jpg", "count":143}
 ]

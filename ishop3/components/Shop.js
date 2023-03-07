@@ -87,7 +87,7 @@ class Shop extends React.Component {
 
     productNew=()=> {
       let maxCode=this.state.productsListSt.reduce((r,v)=> {return ((v.code>r)?v.code:r)},0);
-      this.setState({maxCodeProduct:maxCode+1}, ()=>{let newProductList=[{code:this.state.maxCodeProduct, title:"", price:"", foto:"", count:""}];
+      this.setState({maxCodeProduct:maxCode+1}, ()=>{let newProductList=[{code:this.state.maxCodeProduct, title:"", price:0, foto:"", count:0}];
       this.setState({productInfo:newProductList, cardMode:3, productEdit:null, productSelectedCode:null});});
       
     };

@@ -39,12 +39,12 @@ class Form extends React.Component {
     let nameErorr="", priceErorr="", urlErorr="", countErorr="", validButton;
     if (this.state.currName.length<5)
       nameErorr="введите значение не менее 5 символов";
-    if (isNaN(this.state.currPrice) || (this.state.currPrice.length<1))
-      priceErorr="введите числовое значение не менее 1 символа";
+    if (isNaN(this.state.currPrice) || (this.state.currPrice.length<1) || (this.state.currPrice===0))
+      priceErorr="введите числовое значение больше 0";
     if (this.state.currUrl.length<7)
       urlErorr="введите значение не менее 7 символов";
-    if (isNaN(this.state.currCount) || (this.state.currCount.length<1))
-    countErorr="введите числовое значение не менее 1 символа";
+    if (isNaN(this.state.currCount) || (this.state.currCount.length<1) || (this.state.currCount===0))
+    countErorr="введите числовое значение больше 0";
     validButton=(!nameErorr) && (!priceErorr) && (!urlErorr) && (!countErorr);
     this.setState({nameErorr, priceErorr, urlErorr, countErorr, validButton},()=>{
       this.props.cbvalid(this.state.validButton)});
@@ -60,7 +60,7 @@ class Form extends React.Component {
   };
 
   changePrice=(EO)=> {
-    this.setState({currPrice:parseInt(EO.target.value)}, this.validInput);
+    this.setState({currPrice:parseInt(EO.target.value)||0}, this.validInput);
   };
 
   changeUrl=(EO)=> {
@@ -68,7 +68,7 @@ class Form extends React.Component {
   };
 
   changeCount=(EO)=> {
-    this.setState({currCount:parseInt(EO.target.value)}, this.validInput)
+    this.setState({currCount:parseInt(EO.target.value)||0}, this.validInput)
   };
 
   productSave=(EO)=> {

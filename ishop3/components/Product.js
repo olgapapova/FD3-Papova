@@ -23,7 +23,7 @@ class Product extends React.Component {
 
     state={
       validButton: true,
-    }
+    };
 
     productClicked= (EO)=> {
       this.props.cbProductSelect(this.props.code);
