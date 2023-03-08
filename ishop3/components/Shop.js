@@ -40,7 +40,7 @@ class Shop extends React.Component {
         productEdit:null,
         maxCodeProduct:null,
         validSt:true,
-        changedValSt: false,
+        changedValSt:false,
     };
 
     productSelected=(cod)=> {
@@ -82,7 +82,7 @@ class Shop extends React.Component {
     };
 
     productCancel=()=> {
-      this.setState({cardMode:0, validSt:true});
+      this.setState({cardMode:0, validSt:true, changedValSt:false});
     };
 
     productNew=()=> {

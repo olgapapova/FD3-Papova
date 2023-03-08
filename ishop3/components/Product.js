@@ -57,8 +57,8 @@ class Product extends React.Component {
         </td>
         <td className='Line'> {this.props.count} </td>
         <td className='Button'>
-          <input type='button' value='Edit' disabled={!this.props.validSt} onClick={this.productEd}/>
-          <input type='button' value='Delete' disabled={!this.props.validSt} onClick={this.productDel}/>
+          <input type='button' value='Edit' disabled={(!this.props.validSt)||(this.props.changedValSt)} onClick={this.productEd}/>
+          <input type='button' value='Delete' disabled={(!this.props.validSt)||(this.props.changedValSt)} onClick={this.productDel}/>
         </td> 
       </tr>
       )

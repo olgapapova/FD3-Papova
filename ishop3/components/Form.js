@@ -60,14 +60,17 @@ class Form extends React.Component {
   };
 
   changePrice=(EO)=> {
+    this.props.cbChangedVal();
     this.setState({currPrice:parseInt(EO.target.value)||0}, this.validInput);
   };
 
   changeUrl=(EO)=> {
+    this.props.cbChangedVal();
     this.setState({currUrl:EO.target.value}, this.validInput)
   };
 
   changeCount=(EO)=> {
+    this.props.cbChangedVal();
     this.setState({currCount:parseInt(EO.target.value)||0}, this.validInput)
   };
 
