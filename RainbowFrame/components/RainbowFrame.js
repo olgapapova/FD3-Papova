@@ -7,19 +7,23 @@ class RainbowFrame extends React.Component {
   
     static propTypes= {
       colors:PropTypes.array.isRequired,
-      sch:PropTypes.number.isRequired,
     };
     
     render() {
-      let colors=this.props.colors;
-      let sch=this.props.sch;
+      let sch=0;
+
+      let divs=(n)=>{
+        return ((n===this.props.colors.length)? null :
+        <div style={{fontWeight:"bold", textAlign:"center", padding:"7px", border:"solid 7px "+this.props.colors[n]}}>
+            {(n===this.props.colors.length-1)? this.props.children : null}
+            {divs(n+1)}
+        </div>)
+      }
 
       return (
         
-        (this.props.sch===this.props.colors.length)? null :
-        <div style={{fontWeight:"bold", textAlign:"center", padding:"7px", border:"solid 7px "+colors[sch]}}>
-            {(this.props.sch===this.props.colors.length-1)? "Hello!": null}
-            <RainbowFrame sch={++sch} colors={colors}></RainbowFrame>
+        <div>
+            {divs(sch)}
         </div>
         
       )
