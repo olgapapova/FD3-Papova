@@ -15,24 +15,16 @@ class BR2JSX extends React.Component {
 
     render() {
 
-      let textNew="";
-      let textArr=this.state.textSt.split("");
-      textArr.map(v => {
-        if (v==="/" || v===" ")
-          return;
-        textNew+=v;
-      });
-      let wordArr=textNew.split("<br>");
-      console.log(wordArr);
-      let newStrArr=[];
-      wordArr.map(v=>{
-        newStrArr.push(v);
-        newStrArr.push(<br/>)
+      let textArr=this.state.textSt.split(/[< ]br[ />]+/);
+      let newTextArr=[];
+      textArr.map((v,i)=>{
+        newTextArr.push(v);
+        newTextArr.push(<br key={i}/>)
       });
       
       return (
         
-        <div className='LineBreak'>{newStrArr}</div>
+        <div className='LineBreak'>{newTextArr}</div>
         
       )
     }
