@@ -21,6 +21,7 @@ class BR2JSX extends React.Component {
         newTextArr.push(v);
         newTextArr.push(<br key={i}/>)
       });
+      newTextArr.pop();
       
       return (
         
