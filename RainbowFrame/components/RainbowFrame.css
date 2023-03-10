@@ -1,0 +1,27 @@
+.ColorRed {
+  border: solid red 10px;
+}
+
+.ColorOrange {
+  border: solid orange 10px;
+}
+
+.ColorYellow {
+  border: solid yellow 10px;
+}
+
+.ColorGreen {
+  border: solid green 10px;
+}
+
+.ColorBlue {
+  border: solid #00BFFF 10px;
+}
+
+.ColorBlue2 {
+  border: solid blue 10px;
+}
+
+.ColorPurple {
+  border: solid purple 10px;
+}
