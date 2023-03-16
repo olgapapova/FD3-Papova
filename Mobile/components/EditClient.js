@@ -16,6 +16,38 @@ class EditClient extends React.PureComponent {
     }),
     modeCard:PropTypes.number.isRequired,
   };
+
+  state = {
+    clientInfo:this.props.clientInfo,
+  }
+
+  clientSave= (EO) => {
+    mobileEvents.emit('SaveClicked',this.state.clientInfo);
+  };
+
+  changeFam= (EO) => {
+    let clientInfoNew={...this.state.clientInfo, fam:EO.target.value};
+    this.setState({clientInfo:clientInfoNew});
+  };
+
+  changeName= (EO) => {
+    let clientInfoNew={...this.state.clientInfo, im:EO.target.value};
+    this.setState({clientInfo:clientInfoNew});
+  };
+
+  changeOtch= (EO) => {
+    let clientInfoNew={...this.state.clientInfo, otch:EO.target.value};
+    this.setState({clientInfo:clientInfoNew});
+  };
+
+  changeBalance= (EO) => {
+    let clientInfoNew={...this.state.clientInfo, balance:parseInt(EO.target.value)};
+    this.setState({clientInfo:clientInfoNew});
+  };
+
+  clientCancel=(EO) => {
+    mobileEvents.emit('CencelClicked',this.state.clientInfo.id);
+  };
   
   render() {
     
@@ -25,19 +57,19 @@ class EditClient extends React.PureComponent {
         <span> ID: {this.props.clientInfo.id} </span>
         <br/>
         <label>Фамилия:
-          <input tipe='text' name='Fam' defoltvalue={this.props.clientInfo.fam} onChange={this.changeName}/>
+          <input style={{marginLeft:15+"px"}} tipe='text' name='Fam' defaultValue={this.props.clientInfo.fam} onChange={this.changeFam}/>
         </label>
         <br/>
         <label>Имя:
-          <input tipe='text' name='Nam' value={"bbb"} onChange={this.changePrice}/>
+          <input style={{marginLeft:48+"px"}} tipe='text' name='Nam' defaultValue={this.props.clientInfo.im} onChange={this.changeName}/>
         </label>
         <br/>
         <label>Отчество:
-          <input tipe='text' name='Otch'value={"nnn"} onChange={this.changeUrl}/>
+          <input style={{marginLeft:13+"px"}} tipe='text' name='Otch'defaultValue={this.props.clientInfo.otch} onChange={this.changeOtch}/>
         </label>
         <br/>
         <label>Баланс:
-          <input tipe='number' name='balans' value={"ddd"} onChange={this.changeCount}/>
+          <input style={{marginLeft:30+"px"}} tipe='number' name='balans' defaultValue={this.props.clientInfo.balance} onChange={this.changeBalance}/>
         </label>
         <br/>
         <input type='button' value='Сохронить' onClick={this.clientSave}/>

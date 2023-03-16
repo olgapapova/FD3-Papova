@@ -26,6 +26,11 @@ class Client extends React.PureComponent {
 
   clientEd= (EO) => {
     mobileEvents.emit('EditClicked',this.props.info.id);
+  };
+
+  componentDidUpdate=(oldProps, oldState) => {
+    if (this.props.info!==this.state.info)
+      this.setState({info:this.props.info});
   }
   
   render() {
