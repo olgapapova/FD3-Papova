@@ -1,0 +1,314 @@
+.CategoryBook
+{
+    width: 300px;
+    height: 470px;
+    background-color: rgb(219, 251, 240);
+    float: left;
+    margin: 20px 10px 30px 50px;
+}
+
+.CategoryBook:hover
+{
+    box-shadow: inset 0 0 0 10px #7fffd4;
+}
+
+.Image
+{
+    width: 55%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.TextBook
+{
+    margin: 6px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.TextBookName
+{
+    margin: 6px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Icons3
+{
+    width: 30px;
+    margin: 15px 10px 0 10px;
+}
+
+@media all and (max-width: 1300px)
+{
+    .CategoryBook
+  {
+    width: 250px;
+    height: 430px;
+  }
+  .TextBook
+  {
+    font-size: 14px;
+  }
+
+  .TextBookName
+  {
+    margin: 6px 10px 6px 10px;
+    font-size: 14px;
+  }
+
+}
+
+@media all and (max-width: 1260px)
+{
+    .CategoryBook
+  {
+    width: 230px;
+    height: 410px;
+  }
+  .TextBook
+  {
+    font-size: 14px;
+  }
+
+  .TextBookName
+  {
+    font-size: 14px;
+  }
+
+}
+
+@media all and (max-width: 1220px)
+{
+  .CategoryBook
+  {
+    width: 25%;
+    height: 370px;
+    margin: 20px 10px 30px 40px;
+  }
+  .Image
+  {
+    width: 50%;
+    padding-top: 15px;
+  }
+  .TextBook
+  {
+    margin: 5px;
+  } 
+  .Icons3
+  {
+    width: 25px;
+  }
+}
+
+@media all and (max-width: 1145px)
+{
+  .TextBook
+  {
+    margin: 4px;
+  }  
+  .Icons3
+  {
+    width: 25px;
+    margin: 12px 10px 0 10px;
+  }
+  .TextBookName
+  {
+    margin: 4px 10px 5px 10px;
+  }
+  .CategoryBook
+  {
+    height: 360px;
+  }
+  .Navigation
+  {
+  margin-left: 45px;
+  margin-bottom: 20px;
+  }
+}
+
+@media all and (max-width: 1145px)
+{
+  .CategoryBook
+  {
+    width: 25%;
+    height: 400px;
+    margin: 20px 10px 30px 40px;
+  }
+}
+
+@media all and (max-width: 1000px)
+{
+  .CategoryBook
+  {
+    height: 380px;
+  }
+}
+
+@media all and (max-width: 850px)
+{
+  .CategoryBook
+  {
+    height: 350px;
+  }
+}
+
+@media all and (max-width: 730px)
+{
+  .CategoryBook
+  {
+    width: 25%;
+    height: 300px;
+    margin: 20px 20px 30px 25px;
+  }
+  .Image
+  {
+    width: 45%;
+    padding-top: 15px;
+  }
+  .TextBook
+  {
+    margin: 3px;
+    font-size: 11px;
+  }
+  .TextBookName
+  {
+    margin: 4px 10px 5px 10px;
+    font-size: 12px;
+  }
+  .CategoryBook:hover
+  {
+    box-shadow: inset 0 0 0 5px #7fffd4;
+  }
+  .Icons3
+  {
+    width: 20px;
+    margin: 10px 10px 0 10px;
+  }
+  .Navigation
+  {
+  margin-left: 30px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  }
+}
+
+@media all and (max-width: 640px)
+{
+  .CategoryBook
+  {
+    height: 280px;
+  }
+}
+
+@media all and (max-width: 620px)
+{
+  .CategoryBook
+  {
+    width: 40%;
+    height: 320px;
+    margin: 20px 20px 30px 20px;
+  }
+}
+
+@media all and (max-width: 530px)
+{
+  .CategoryBook
+  {
+    width: 40%;
+    height: 300px;
+    margin: 20px 20px 30px 20px;
+  }
+  .Navigation
+  {
+  margin-left: 25px;
+  margin-bottom: 10px;
+  }
+}
+
+@media all and (max-width: 450px)
+{
+  .CategoryBook
+  {
+    height: 280px;
+    margin: 20px 10px 30px 10px;
+  }
+}
+
+@media all and (max-width: 340px)
+{
+  .CategoryBook
+  {
+    width: 70%;
+    height: 320px;
+    margin: 20px 10px 30px 30px;
+  }
+}
+
+@media all and (max-width: 310px)
+{
+  .Navigation
+  {
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: 11px;
+  }
+  .CategoryBook
+  {
+    height: 300px;
+    margin: 20px 10px 30px 15px;
+  }
+}
+
+@media all and (max-width: 310px)
+{
+  .Navigation
+  {
+    margin-left: 5px;
+    font-size: 10px;
+  }
+  .CategoryBook
+  {
+    height: 290px;
+    margin: 20px 10px 30px 5px;
+  }
+}
+
+@media all and (max-width: 250px)
+{
+  .Navigation
+  {
+    margin-left: 3px;
+    font-size: 9px;
+  }
+  .CategoryBook
+  {
+    height: 290px;
+    margin: 10px 10px 30px 3px;
+  }
+}
+
+@media all and (max-width: 200px)
+{
+  .Navigation
+  {
+    font-size: 8px;
+  }
+  .CategoryBook
+  {
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 185px)
+{
+  .CategoryBook
+  {
+    width: 50%;
+    height: 290px;
+    margin: 10px 10px 30px 3px;
+  }
+}

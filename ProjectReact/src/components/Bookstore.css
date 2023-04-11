@@ -1,0 +1,696 @@
+html, body {
+    height: 100%;
+}
+
+.Conteyner
+{
+    overflow: hidden;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+.Header 
+{
+    grid-column: 1/3;
+    grid-row: 1;
+    background-color: aquamarine;
+    padding: 10px 0 10px 30px;
+    font-family: Montserrat Alternates, sans-serif;
+    font-size: 18px;
+}
+
+.PageLink
+{
+    color: black;
+    margin-right: 10px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.ActivePageLink
+{
+    font-weight: bold;
+    margin-right: 10px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.Logo
+{
+    width: 120px;
+    padding-right: 50px;
+}
+
+.Change
+{
+    grid-column: 2;
+    grid-row: 2/3;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.Menu
+{
+    grid-column: 1;
+    grid-row: 2/3;
+    font-family: Montserrat Alternates, sans-serif;
+    width: 100%;
+}
+
+.MenuItem
+{
+    height: 3px;
+    font-size: 14px;
+    margin: 15px 0 0 20px;
+}
+
+.MenuItem2:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: rgb(0, 255, 170); /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.MenuItem2:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color:aquamarine; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+
+.MenuItem2
+{
+    color: #000000;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Footer
+{
+    color: #f0ffff;
+    background-color: black;
+    grid-column: 1/3;
+    grid-row: 4;
+    padding: 5px;
+}
+
+.FooterCatalog
+{
+    padding: 30px 40px 20px 70px;
+    float: left;
+}
+
+.FooterTitle
+{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.FooterText
+{
+    font-size: 12px;
+    color: azure;
+    text-decoration: none;
+}
+
+.Icons
+{
+    width: 40px;
+    margin: 30px 15px 0 5px;
+}
+
+.atuin-btn 
+{
+    display: inline-flex;
+    margin: 10px;
+    text-decoration: none;
+    position: relative;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 8px 20px;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Montserrat Alternates, sans-serif;/*'Roboto Condensed', Тahoma, sans-serif;*/
+    background:  rgb(0, 189, 126);
+    cursor: pointer;
+    border: 2px solid rgb(193, 255, 234);
+    outline: 1px solid;
+    outline-color: rgb(0, 189, 126);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1); 
+}
+.atuin-btn:hover,
+.atuin-btn:active,
+.atuin-btn:focus 
+{
+    box-shadow: inset 0 0 20px  rgb(193, 255, 234);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    color: #FFF;
+}
+
+form 
+{
+    position: relative;
+    width: 300px;
+    margin: 0;
+}
+
+.Search 
+{
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    border: 2px solid rgb(0, 189, 126);
+    border-radius: 5px;
+    outline: none;
+    background: #ffffff;
+    color: #9E9C9C;
+    margin: 0 0 0 0;
+}
+.SerchButton 
+{
+    position: absolute; 
+    top: 0;
+    right: 0px;
+    width: 60px;
+    height: 40px;
+    border: none;
+    background: #00bd7e;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-family: Montserrat Alternates, sans-serif;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.SerchButton:before 
+{
+    /*content: "";*/
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+
+.HeaderConteyner
+{
+    float: left;
+    margin: 10px 5px 0 20px;
+}
+
+.HeaderConteyner1
+{
+    float: left;
+    padding: 10px 45px 0 20px;
+    height: auto;
+}
+
+.HeaderConteyner2
+{
+    float: left;
+    padding: 20px 0 0 20px;
+}
+
+.Ic
+{
+    width: 10px;
+}
+
+.Icons2
+{
+    width: 35px;
+}
+
+.HeaderConteyner3
+{
+    float: right;
+    padding: 25px 60px 0 0;
+}
+
+.HeaderConteyner4
+{
+    float: right;
+    padding: 25px 60px 0 0;
+}
+
+.HeaderMenu
+{
+    display: none;
+}
+
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: absolute;
+    top: 27px;
+    left: 140px;
+    width: 30px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1000 !important; 
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #0F9467;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  /* контейнер меню */
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 100px 30px;
+    list-style: none;
+    text-align: left;
+    background-color: rgb(219, 251, 240);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    padding: 6px 15px;
+    color: #0F9467;
+    font-family: Montserrat Alternates, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color:rgb(0, 189, 126);
+    color:#ffffff
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+  .menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+@media all and (max-width: 1300px)
+{
+  .HeaderConteyner3
+  {
+    padding: 25px 45px 0 0;
+  }
+  .Icons2
+  {
+    width: 30px;
+  }
+  .HeaderConteyner
+  {
+    margin: 10px 0 0 20px;
+  }
+  .HeaderConteyner2
+  {
+    padding: 20px 0 0 5px;
+  }
+  .HeaderConteyner1
+  {
+    padding: 10px 40px 0 5px;
+  }
+
+}
+
+@media all and (max-width: 1260px)
+{
+    .HeaderConteyner3
+  {
+    padding: 25px 30px 0 0;
+  }
+  .HeaderConteyner4
+  {
+    padding: 25px 45px 0 0;
+  }
+  .HeaderConteyner
+  {
+    margin: 10px 0 0 10px;
+  }
+  .HeaderConteyner1
+  {
+    padding: 10px 40px 0 0;
+  }
+
+}
+
+@media all and (max-width: 1220px)
+{
+  .HeaderConteyner3
+  {
+    padding: 25px 25px 0 0;
+  }
+  .HeaderConteyner4
+  {
+    padding: 25px 40px 0 0;
+  }
+  .HeaderConteyner1
+  {
+    padding: 10px 30px 0 0;
+  } 
+  .HeaderConteyner
+  {
+    margin: 10px 0 0 5px;
+  }
+  .Logo
+  {
+    width: 100px;
+    padding-right: 30px;
+  }
+}
+
+@media all and (max-width: 1145px)
+{
+  .atuin-btn 
+  {
+    margin: 10px;
+    font-size: 10px;
+    line-height: 20px;
+    padding: 7px 15px;
+    outline: 1px solid;
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1); 
+  } 
+  .Search 
+  {
+    height: 38px;
+  }
+  .SerchButton 
+  {
+    height: 38px;
+    font-size: 12px;
+  }
+  .Conteyner
+  {
+    grid-template-columns: 250px 1fr;
+  }
+  .MenuItem
+  {
+    height: 3px;
+    font-size: 12px;
+    margin: 15px 0 0 20px;
+  }
+}
+
+@media all and (max-width: 1145px)
+{
+  .Change
+  {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    padding-top: 80px;
+    padding-left: 20px;
+  }
+  .Menu
+  {
+    display: none;
+  }
+  .HeaderMenu
+  {
+    display: inline-block;
+  }
+  .HeaderConteyner1
+  {
+    display: none;
+  }
+  .Header
+  {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    padding: 0 0 10px 30px;
+  }
+  .Logo
+  {
+    width: 90px;
+  }
+  .HeaderConteyner
+  {
+    margin: 15px 5px 0 10px;
+  } 
+  .HeaderConteyner2
+  {
+    padding: 20px 0 0 100px;
+  }
+  .HeaderConteyner3
+  {
+    padding: 25px 40px 0 0;
+  }
+
+  .HeaderConteyner4
+  {
+    padding: 25px 40px 0 0;
+  }
+}
+
+@media all and (max-width: 850px)
+{
+  .HeaderConteyner3
+  {
+    padding: 25px 30px 0 0;
+  }
+
+  .HeaderConteyner4
+  {
+    padding: 25px 30px 0 0;
+  }
+  .HeaderConteyner2
+  {
+    padding: 20px 0 0 70px;
+  }
+  .HeaderConteyner
+  {
+    margin: 15px 5px 0 5px;
+  }
+  .menu__btn 
+  {
+    top: 27px;
+    left: 120px;
+    width: 30px;
+    height: 26px;
+  } 
+}
+
+@media all and (max-width: 730px)
+{
+  .Icons2
+  {
+    width: 25px;
+  }
+  .HeaderConteyner3
+  {
+    padding: 25px 25px 0 0;
+  }
+
+  .HeaderConteyner4
+  {
+    padding: 25px 25px 0 0;
+  }
+  .HeaderConteyner2
+  {
+    padding: 20px 0 0 70px;
+  }
+  .HeaderConteyner
+  {
+    display: none;
+  }
+  .menu__btn 
+  {
+    top: 21px;
+    left: 40px;
+  } 
+  .Search 
+  {
+    height: 30px;
+  }
+  .SerchButton 
+  {
+    height: 30px;
+  }
+}
+
+@media all and (max-width: 620px)
+{
+  .HeaderConteyner3
+  {
+    padding: 25px 17px 0 0;
+  }
+
+  .HeaderConteyner4
+  {
+    padding: 25px 17px 0 0;
+  }
+  .menu__btn 
+  {
+    top: 21px;
+    left: 15px;
+  } 
+  .HeaderConteyner2
+  {
+    padding: 20px 0 0 30px;
+  }
+}
+
+@media all and (max-width: 530px)
+{
+  .menu__btn 
+  {
+    top: 73px;
+    left: 180px;
+  }
+  .HeaderConteyner2
+  {
+    float: none;
+    padding: 0 0 0 14px;
+  }
+  .Header 
+  {
+    padding: 0 0 15px 0;
+  }
+  .HeaderConteyner3
+  {
+    float: left;
+    padding: 20px 0 0 25px;
+  }
+
+  .HeaderConteyner4
+  {
+    float: left;
+    padding: 20px 0 0 25px;
+  }
+  .Change
+  {
+    padding-top: 130px;
+    padding-left: 10px;
+  }
+}
+
+@media all and (max-width: 340px)
+{
+  .HeaderConteyner2
+  {
+    display: none;
+  }
+  .menu__btn 
+  {
+    top: 20px;
+  }
+  .Change
+  {
+    padding-top: 80px;
+    padding-left: 10px;
+  }
+}
+
+@media all and (max-width: 310px)
+{
+  .menu__btn 
+  {
+    top: 20px;
+  }
+}
+
+@media all and (max-width: 250px)
+{
+  .menu__btn 
+  {
+    top: 60px;
+    left: 20px;
+  }
+  .Header 
+  {
+    padding: 0 0 60px 0;
+  }
+  .Change
+  {
+    padding-top: 115px;
+    padding-left: 5px;
+  }
+}
+
+@media all and (max-width: 190px)
+{
+  .menu__btn {
+    width: 20px;
+    height: 20px;
+  }
+  .Icons2
+  {
+    width: 20px;
+  }
+}
+
+@media all and (max-width: 175px)
+{
+  .HeaderConteyner3
+  {
+    float: left;
+    padding: 20px 0 0 15px;
+  }
+
+  .HeaderConteyner4
+  {
+    float: left;
+    padding: 20px 0 0 15px;
+  }
+}

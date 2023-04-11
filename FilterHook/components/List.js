@@ -6,7 +6,7 @@ const List = props => {
 
   return (
     <div>
-      <div class="List">{props.words.map((s, i) => <div key={i} class="List2">{s}</div>)}</div>
+      <div className="List">{props.words.map((s, i) => <div key={i} className="List2">{s}</div>)}</div>
     </div>
   );
 };
