@@ -29,8 +29,10 @@ const BooksListCategory = (props) => {
       <div className="TextBook">{author}</div>
       <div className="TextBookName">{price} руб.</div>
       <div className="TextBook">
-        <NavLink onClick={addToOrder}><img className="Icons3" src="serdce.png"/></NavLink>
-        <img className="Icons3" src="karzina.png"/>
+        <img className="Icons3" src="serdce.png"/>
+        <NavLink onClick={addToOrder}>
+          <img className="Icons3" src="karzina.png"/>
+        </NavLink>
       </div>
     </div>
     </>

@@ -88,11 +88,8 @@ export const Bookstore = () => {
           <div className="HeaderConteyner3">
             <div><img onClick={()=> setCartOpen(cartOpen= !cartOpen)} className={`ShopCartButton ${cartOpen && 'active'}`} src="karzina.png"/></div>
             {cartOpen && (
-              <div className="ShopCart"><Basket/></div>
+              <div className="ShopCart"><Basket></Basket></div>
             )}
-          </div>
-          <div className="HeaderConteyner3">
-            <div><img className="Icons2" src="serdce.png"/></div>
           </div>
         </div>
       <div className="Menu">

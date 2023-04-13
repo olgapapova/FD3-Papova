@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState={
-  data: [],  
+  data:[],  
 }
 
 export const orderSlice = createSlice({
@@ -10,13 +10,7 @@ export const orderSlice = createSlice({
   reducers: {
 
     setOrder: (state,action) => {
-      state.data = state.data.push(action.payload);
-    },
-
-    removeOrder: (state) => {
-      state.image = null;
-      state.nameBook = null;
-      state.price = null;
+      state.data.push(action.payload);
     },
 
   },

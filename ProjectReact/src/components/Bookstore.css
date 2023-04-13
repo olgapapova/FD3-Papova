@@ -62,8 +62,8 @@ html, body {
 .ShopCart
 {
   position: absolute;
-  top: 110px;
-  right: 0;
+  top: 100px;
+  right: 20px;
   background-color: rgb(219, 251, 240);
   width: 450px;
   min-height: 100px;

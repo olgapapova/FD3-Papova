@@ -10,6 +10,7 @@
 .CategoryBook:hover
 {
     box-shadow: inset 0 0 0 10px #7fffd4;
+    box-shadow: 4px 5px 15px -5px #616161;
 }
 
 .Image
@@ -64,18 +65,30 @@
   font-weight: bolder;
 }
 
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .BasketImg
 {
-  width: 50px;
+  width: 65px;
   float: left;
-  padding: 10px;
+  margin: 15px;
 }
 
 .BasketBook
 {
   font-size: 12px;
-  padding: 10px 0 0 10px;
+  margin: 20px 0 0 10px;
   font-weight: bolder;
+}
+
+.TitleOrder
+{
+  text-align: center;
+  padding: 10px;
 }
 
 @media all and (max-width: 1300px)
@@ -219,10 +232,6 @@
   {
     margin: 4px 10px 5px 10px;
     font-size: 12px;
-  }
-  .CategoryBook:hover
-  {
-    box-shadow: inset 0 0 0 5px #7fffd4;
   }
   .Icons3
   {
