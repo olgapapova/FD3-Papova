@@ -12,9 +12,11 @@ const BooksListCategory = (props) => {
   const [image, setImage] = useState(props.info.image);
   const [author, setAuthor] = useState(props.info.author);
   const [price, setPrice] = useState(props.info.price);
+  const [id, setId] = useState(props.info.id);
 
   function addToOrder() {
     dispatch( setOrder({
+      id: id,
       image: image,
       nameBook: name,
       price: price,

@@ -10,11 +10,13 @@ export const ReferenceLiteraturePage = () => {
   let booksList;
 
   function componentF () {
-    let booksListFilter=books.data.filter(s => s.category===7);
-    console.log(booksListFilter)
+    if (books.data !==null) {
+      let booksListFilter=books.data.filter(s => s.category===7);
+      console.log(booksListFilter)
     
-    booksList=booksListFilter.map(v=> 
-      <BooksListCategory key={v.id} info={v}/>)
+      booksList=booksListFilter.map(v=> 
+        <BooksListCategory key={v.id} info={v}/>)
+    }
   }
   componentF();
 

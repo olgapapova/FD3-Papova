@@ -13,18 +13,18 @@ export const FictionPage = () => {
     ()=> {
     dispatch( booksLoad );
   },[])
-
+  
   let books = useSelector( state => state.books );
-  let [listBooks, setlistBooks]=useState(books);
-  console.log(books)
   let booksList;
 
   function componentF () {
-    let booksListFilter=listBooks.data.filter(s => s.category===1);
-    console.log(booksListFilter)
+    if (books.data !== null) {
+      let booksListFilter=books.data.filter(s => s.category===1);
+      console.log(booksListFilter)
     
-    booksList=booksListFilter.map(v=> 
-      <BooksListCategory key={v.id} info={v}/>)
+      booksList=booksListFilter.map(v=> 
+        <BooksListCategory key={v.id} info={v}/>)
+    }
   }
   componentF();
 
@@ -34,7 +34,11 @@ export const FictionPage = () => {
         <NavLink to="/">Главная</NavLink><span> &gt; Художественная литература</span>
       </div>
       <div>
-        {booksList}
+      { (books.dataLoadState===0) && "нет данных" }
+      { (books.dataLoadState===1) && "Загрузка данных..." }
+      { (books.dataLoadState===2) &&  booksList }
+      { (books.dataLoadState===3) && "error: "+books.dataLoadError }
+        
       </div>
     </>
 );
