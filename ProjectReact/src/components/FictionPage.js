@@ -1,17 +1,26 @@
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect } from 'react';
+import { booksLoad } from "../redux/booksLoad.js";
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import  BooksListCategory  from './BooksListCategory';
 
 export const FictionPage = () => {
 
-  const books = useSelector( state => state.books );
+  const dispatch = useDispatch();
+
+  useEffect (
+    ()=> {
+    dispatch( booksLoad );
+  },[])
+
+  let books = useSelector( state => state.books );
+  let [listBooks, setlistBooks]=useState(books);
   console.log(books)
   let booksList;
 
   function componentF () {
-    let booksListFilter=books.data.filter(s => s.category===1);
+    let booksListFilter=listBooks.data.filter(s => s.category===1);
     console.log(booksListFilter)
     
     booksList=booksListFilter.map(v=> 

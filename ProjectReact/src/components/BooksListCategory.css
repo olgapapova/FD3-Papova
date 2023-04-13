@@ -42,6 +42,42 @@
     margin: 15px 10px 0 10px;
 }
 
+.Navigation
+{
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.Login
+{
+  margin: 40px 0 100px 70px;
+  font-family: Montserrat Alternates, sans-serif;
+  text-decoration: none;
+}
+
+.Login button,
+.Login .log
+{
+  font-family: Montserrat Alternates, sans-serif;
+  text-decoration: none;
+  color:#084933;
+  font-weight: bolder;
+}
+
+.BasketImg
+{
+  width: 50px;
+  float: left;
+  padding: 10px;
+}
+
+.BasketBook
+{
+  font-size: 12px;
+  padding: 10px 0 0 10px;
+  font-weight: bolder;
+}
+
 @media all and (max-width: 1300px)
 {
     .CategoryBook
@@ -58,6 +94,11 @@
   {
     margin: 6px 10px 6px 10px;
     font-size: 14px;
+  }
+  .Navigation
+  {
+  margin-left: 50px;
+  margin-bottom: 10px;
   }
 
 }
@@ -252,9 +293,9 @@
 {
   .Navigation
   {
-  margin-left: 15px;
-  margin-bottom: 5px;
-  font-size: 11px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-size: 11px;
   }
   .CategoryBook
   {
@@ -263,7 +304,7 @@
   }
 }
 
-@media all and (max-width: 310px)
+@media all and (max-width: 300px)
 {
   .Navigation
   {
@@ -272,7 +313,7 @@
   }
   .CategoryBook
   {
-    height: 290px;
+    height: 310px;
     margin: 20px 10px 30px 5px;
   }
 }
@@ -286,7 +327,33 @@
   }
   .CategoryBook
   {
-    height: 290px;
+    width: 65%;
+    height: 310px;
+    margin: 10px 10px 30px 3px;
+  }
+}
+
+@media all and (max-width: 225px)
+{
+  .CategoryBook
+  {
+    width: 60%;
+    height: 310px;
+    margin: 10px 10px 30px 3px;
+  }
+}
+
+@media all and (max-width: 205px)
+{
+  .Navigation
+  {
+    margin-left: 3px;
+    font-size: 9px;
+  }
+  .CategoryBook
+  {
+    width: 60%;
+    height: 310px;
     margin: 10px 10px 30px 3px;
   }
 }
@@ -299,7 +366,7 @@
   }
   .CategoryBook
   {
-    width: 60%;
+    height: 270px;
   }
 }
 
@@ -307,8 +374,11 @@
 {
   .CategoryBook
   {
-    width: 50%;
-    height: 290px;
-    margin: 10px 10px 30px 3px;
+    width: 45%;
+    height: 270px;
+  }
+  .Navigation span 
+  {
+    display: none;
   }
 }

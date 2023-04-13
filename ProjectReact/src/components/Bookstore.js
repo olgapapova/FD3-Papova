@@ -1,20 +1,23 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-
+import {useAuth} from 'hooks/use-auth.js';
 import { useDispatch } from 'react-redux';
 import { booksLoad } from "../redux/booksLoad.js";
 import { booksFilterLoad } from "../redux/booksFilterLoad.js";
 import { updateData } from "../redux/booksChangeSlice.js";
+import { removeUser } from '../redux/userSlice';
+import { Basket } from './Basket';
 
 import './Bookstore.css';
 import { PagesRouter } from './PagesRouter';
 
 export const Bookstore = () => {
 
-  let [bookName,setBookName]=useState("");
+  let [cartOpen, setCartOpen]=useState(false);
+  let [bookName, setBookName]=useState("");
 
   let navigate = useNavigate();
-
+  const {isAuth, email} = useAuth();
   const dispatch = useDispatch();
 
   window.onbeforeunload = function () {
@@ -26,7 +29,7 @@ export const Bookstore = () => {
     dispatch( booksLoad );
   },[])
 
-  function goToBookDetails() {
+  function goToBooksFilter() {
     dispatch( updateData(bookName) );
     dispatch( booksFilterLoad );
     const uri="/list/"+encodeURIComponent(bookName);
@@ -44,12 +47,12 @@ export const Bookstore = () => {
             </NavLink>
           </div>
           <div className="HeaderMenu">
-            <div class="hamburger-menu">
+            <div className="hamburger-menu">
               <input id="menu__toggle" type="checkbox" />
-              <label class="menu__btn" for="menu__toggle">
+              <label className="menu__btn" htmlFor="menu__toggle">
               <span></span>
               </label>
-              <ul class="menu__box">
+              <ul className="menu__box">
                 <li><NavLink to="/" className="menu__item">Главная</NavLink></li>  
                 <li><NavLink to="/catalog" className="menu__item">Весь каталог</NavLink></li>
                 <li><NavLink to="/category1" className="menu__item">Художественная литература</NavLink></li>
@@ -65,21 +68,28 @@ export const Bookstore = () => {
             </div>
           </div>
           <div className="HeaderConteyner1">
-            <NavLink to="/catalog" className="atuin-btn">Каталог</NavLink>
+            <NavLink to="/catalog/1" className="atuin-btn">Каталог</NavLink>
             <NavLink to="/aboutUs" className="atuin-btn">О нас</NavLink>
             <NavLink to="/payment" className="atuin-btn">Оплата и доставка</NavLink>
           </div>
           <div className="HeaderConteyner2">
           <form>
             <input className='Search' type='text' name='filter' placeholder="Искать здесь..." onChange={ eo => setBookName(eo.target.value) }/>
-            <input className="SerchButton" value="Поиск" type="button" onClick={goToBookDetails}/>
+            <input className="SerchButton" value="Поиск" type="button" onClick={goToBooksFilter}/>
           </form>
           </div>
+          {isAuth && (
+            <div className="HeaderConteyner5">
+              <button className="atuin-btn" onClick={()=>dispatch(removeUser())}>Выйти</button>
+            </div>)}
           <div className="HeaderConteyner4">
-            <div><img className="Icons2" src="avt.png"/></div>
+            <div><NavLink to="/login"><img className="ShopCartButton" src="avt.png"/></NavLink></div> 
           </div>
           <div className="HeaderConteyner3">
-            <div><img className="Icons2" src="karzina.png"/></div>
+            <div><img onClick={()=> setCartOpen(cartOpen= !cartOpen)} className={`ShopCartButton ${cartOpen && 'active'}`} src="karzina.png"/></div>
+            {cartOpen && (
+              <div className="ShopCart"><Basket/></div>
+            )}
           </div>
           <div className="HeaderConteyner3">
             <div><img className="Icons2" src="serdce.png"/></div>

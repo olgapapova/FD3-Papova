@@ -1,6 +1,5 @@
 import { updateLoadState, updateData } from "./booksFilterSlice.js";
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 
 let booksFilt;

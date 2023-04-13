@@ -19,6 +19,7 @@ html, body {
     padding: 10px 0 10px 30px;
     font-family: Montserrat Alternates, sans-serif;
     font-size: 18px;
+    position: relative;
 }
 
 .PageLink
@@ -41,6 +42,48 @@ html, body {
 {
     width: 120px;
     padding-right: 50px;
+}
+
+.ShopCartButton
+{
+  cursor: pointer;
+  width: 35px;
+  transition: color, transform 500ms ease;
+  color:  #0F9467;
+}
+
+.ShopCartButton:hover,
+.ShopCartButton.active
+{
+  color: #084933;
+  transform: scale(1.3);
+}
+
+.ShopCart
+{
+  position: absolute;
+  top: 110px;
+  right: 0;
+  background-color: rgb(219, 251, 240);
+  width: 450px;
+  min-height: 100px;
+  -webkit-box-shadow: 4px 5px 15px -5px #616161; 
+  box-shadow: 4px 5px 15px -5px #616161;
+  z-index: 10000;
+}
+
+.ofLogin,
+.ofRegistr
+{
+  position: absolute;
+  top: 110px;
+  right: 0;
+  background-color: rgb(219, 251, 240);
+  width: 450px;
+  height: 450px;
+  -webkit-box-shadow: 4px 5px 15px -5px #616161; 
+  box-shadow: 4px 5px 15px -5px #616161;
+  z-index: 10000;
 }
 
 .Change
@@ -73,9 +116,9 @@ html, body {
     right: 0;
     bottom: -3px;
     width: 0;
-    height: 2px; /* Высота линии */
-    background-color: rgb(0, 255, 170); /* Цвет подчеркивания при исчезании линии*/
-    transition: width 0.5s; /* Время эффекта */
+    height: 2px; 
+    background-color: rgb(0, 255, 170); 
+    transition: width 0.5s; 
 }
 
 .MenuItem2:hover:after {
@@ -85,9 +128,9 @@ html, body {
     position: absolute;
     left: 0;
     bottom: -3px;
-    height: 2px; /* Высота линии */
-    background-color:aquamarine; /* Цвет подчеркивания при появлении линии*/
-    transition: width 0.5s;  /* Время эффекта */
+    height: 2px; 
+    background-color:aquamarine; 
+    transition: width 0.5s; 
 }
 
 .MenuItem2
@@ -144,7 +187,7 @@ html, body {
     color: #FFF;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: Montserrat Alternates, sans-serif;/*'Roboto Condensed', Тahoma, sans-serif;*/
+    font-family: Montserrat Alternates, sans-serif;
     background:  rgb(0, 189, 126);
     cursor: pointer;
     border: 2px solid rgb(193, 255, 234);
@@ -201,7 +244,6 @@ form
 
 .SerchButton:before 
 {
-    /*content: "";*/
     font-family: FontAwesome;
     font-size: 16px;
     color: #F9F0DA;
@@ -245,7 +287,13 @@ form
 .HeaderConteyner4
 {
     float: right;
-    padding: 25px 60px 0 0;
+    padding: 25px 40px 0 0;
+}
+
+.HeaderConteyner5
+{
+    float: right;
+    padding: 13px 30px 0 0;
 }
 
 .HeaderMenu
@@ -259,8 +307,8 @@ form
   }
   /* стилизуем кнопку */
   .menu__btn {
-    display: flex; /* используем flex для центрирования содержимого */
-    align-items: center;  /* центрируем содержимое кнопки */
+    display: flex;
+    align-items: center; 
     position: absolute;
     top: 27px;
     left: 140px;
@@ -369,7 +417,10 @@ form
   {
     padding: 10px 40px 0 5px;
   }
-
+  .FooterCatalog
+  {
+    padding: 30px 50px 20px 80px;
+  }
 }
 
 @media all and (max-width: 1260px)
@@ -390,7 +441,10 @@ form
   {
     padding: 10px 40px 0 0;
   }
-
+  .FooterCatalog
+  {
+    padding: 30px 40px 20px 70px;
+  }
 }
 
 @media all and (max-width: 1220px)
@@ -418,37 +472,11 @@ form
   }
 }
 
-@media all and (max-width: 1145px)
+@media all and (max-width: 1165px)
 {
-  .atuin-btn 
+  .FooterCatalog
   {
-    margin: 10px;
-    font-size: 10px;
-    line-height: 20px;
-    padding: 7px 15px;
-    outline: 1px solid;
-    outline-offset: 0px;
-    text-shadow: none;
-    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1); 
-  } 
-  .Search 
-  {
-    height: 38px;
-  }
-  .SerchButton 
-  {
-    height: 38px;
-    font-size: 12px;
-  }
-  .Conteyner
-  {
-    grid-template-columns: 250px 1fr;
-  }
-  .MenuItem
-  {
-    height: 3px;
-    font-size: 12px;
-    margin: 15px 0 0 20px;
+    padding: 30px 30px 20px 70px;
   }
 }
 
@@ -501,6 +529,26 @@ form
   {
     padding: 25px 40px 0 0;
   }
+  .FooterCatalog
+  {
+    padding: 30px 30px 20px 70px;
+  }
+}
+
+@media all and (max-width: 1085px)
+{
+  .FooterCatalog
+  {
+    padding: 30px 20px 20px 60px;
+  }
+}
+
+@media all and (max-width: 1040px)
+{
+  .FooterCatalog
+  {
+    padding: 20px 15px 20px 50px;
+  }
 }
 
 @media all and (max-width: 850px)
@@ -529,6 +577,10 @@ form
     width: 30px;
     height: 26px;
   } 
+  .FooterCatalog
+  {
+    padding: 15px 10px 15px 40px;
+  }
 }
 
 @media all and (max-width: 730px)
@@ -648,6 +700,10 @@ form
   {
     top: 20px;
   }
+  .FooterCatalog
+  {
+    padding: 15px 5px 15px 30px;
+  }
 }
 
 @media all and (max-width: 250px)
@@ -666,6 +722,33 @@ form
     padding-top: 115px;
     padding-left: 5px;
   }
+  .FooterCatalog
+  {
+    padding: 15px 5px 15px 20px;
+    width: 70%;
+  }
+  .FooterTitle
+  {
+    font-size: 10px;
+  }
+  .FooterText
+  {
+    font-size: 10px;
+  }
+  .Icons
+  {
+    width: 20px;
+    margin: 0 15px 0 5px;
+  }
+}
+
+@media all and (max-width: 230px)
+{
+  .FooterCatalog
+  {
+    padding: 10px 5px 5px 5px;
+    width: 60%;
+  }
 }
 
 @media all and (max-width: 190px)
@@ -677,6 +760,14 @@ form
   .Icons2
   {
     width: 20px;
+  }
+  .FooterTitle
+  {
+    font-size: 8px;
+  }
+  .FooterText
+  {
+    font-size: 8px;
   }
 }
 

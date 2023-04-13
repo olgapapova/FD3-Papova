@@ -28,7 +28,6 @@
 
 /* Общие стили */
 *, *:after, *:before { 
-	/*border-box; */
 	box-sizing: border-box; 
 }
 .clearfix:before, .clearfix:after { 
@@ -43,12 +42,9 @@
   width: 500px;
   height: 300px;
   margin: 20px 2% 50px 3%;
-
-	overflow: hidden;
-	/*margin: 0;*/
-	/*width: 100%;*/
-	list-style: none;
-	text-align: center;
+  overflow: hidden;
+  list-style: none;
+  text-align: center;
 }
 .hover-text-one figure {
 	position: relative;
@@ -141,4 +137,113 @@ figure.effect-text-one:hover p {
 figure.effect-text-one:hover p {
 	transition-delay: 0.05s;
 	transition-duration: 0.35s;
+}
+
+@media all and (max-width: 1300px)
+{
+  .hover-text-one {
+	width: 450px;
+	margin: 10px 0 20px 0;
+	height: 30%;
+  }
+}
+
+@media all and (max-width: 1260px)
+{
+  .hover-text-one {
+	width: 450px;
+	margin: 10px 0 20px 0;
+  }
+}
+@media all and (max-width: 1220px)
+{
+  .hover-text-one {
+	width: 420px;
+	margin: 10px 0 10px 1%;
+  }
+}
+
+@media all and (max-width: 1175px)
+{
+  .hover-text-one {
+	width: 48%;
+	margin: 10px 0 0 0;
+  }
+}
+
+@media all and (max-width: 1120px)
+{
+  .hover-text-one {
+	width: 48%;
+	margin: 10px 0 10px 0;
+	height: 30%;
+  }
+}
+
+@media all and (max-width: 965px)
+{
+  .hover-text-one {
+	width: 48%;
+	margin: 5px 0 5px 0;
+  }
+}
+
+@media all and (max-width: 750px)
+{
+  .hover-text-one figure figcaption {
+	font-size: 12px;
+  }
+}
+@media all and (max-width: 650px)
+{
+  .hover-text-one figure figcaption {
+	font-size: 14px;
+  }
+  .hover-text-one {
+	width: 90%;
+	margin: 5px 0 5px 0;
+  }
+}
+
+@media all and (max-width: 400px)
+{
+  .hover-text-one figure figcaption {
+	font-size: 12px;
+  }
+  .hover-text-one {
+	margin: 0 0 5px 0;
+  }
+}
+
+@media all and (max-width: 345px)
+{
+  .hover-text-one p {
+	display: none;
+  }
+}
+
+@media all and (max-width: 225px)
+{
+  .hover-text-one {
+	margin: 0 0 0 0;
+	width: 80%;
+  }
+  .hover-text-one figure figcaption {
+	font-size: 8px;
+  }
+  .ConteynerCategory
+{
+  padding: 10px 0 0 0;
+}
+}
+
+@media all and (max-width: 200px)
+{
+  .hover-text-one {
+	margin: 0 0 0 0;
+	width: 70%;
+  }
+  .hover-text-one figure figcaption {
+	font-size: 6px;
+  }
 }

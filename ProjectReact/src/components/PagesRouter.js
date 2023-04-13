@@ -13,11 +13,15 @@ import { PageChildrenLiterature } from '../pages/PageChildrenLiterature';
 import { PageEncyclopedias } from '../pages/PageEncyclopedias';
 import { PageReferenceLiterature } from '../pages/PageReferenceLiterature';
 import { PageFilterBooks } from '../pages/PageFilterBooks';
+import { PageRegister } from '../pages/PageRegister';
+import { PageLogin } from '../pages/PageLogin';
 
 export const PagesRouter = () => {
           
     return (
       <Routes>
+        <Route path="/register" element={<PageRegister/>} />
+        <Route path="/login" element={<PageLogin/>} />
         <Route path="/" element={<PageHome/>} />
         <Route path="/catalog" element={<PageCatalog/>} />
         <Route path="/aboutUs" element={<PageAboutUs/>} />

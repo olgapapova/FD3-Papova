@@ -1,15 +1,25 @@
-//import React from 'react';
-import React, { useState, useEffect } from 'react';
-//import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setOrder } from "../redux/orderSlice.js";
 
 import './BooksListCategory.css';
 
 const BooksListCategory = (props) => { 
+  const dispatch = useDispatch();
 
   const [name, setName] = useState(props.info.nameBook);
   const [image, setImage] = useState(props.info.image);
   const [author, setAuthor] = useState(props.info.author);
   const [price, setPrice] = useState(props.info.price);
+
+  function addToOrder() {
+    dispatch( setOrder({
+      image: image,
+      nameBook: name,
+      price: price,
+    }) );
+  };
 
   return (
     <>
@@ -19,7 +29,7 @@ const BooksListCategory = (props) => {
       <div className="TextBook">{author}</div>
       <div className="TextBookName">{price} руб.</div>
       <div className="TextBook">
-        <img className="Icons3" src="serdce.png"/>
+        <NavLink onClick={addToOrder}><img className="Icons3" src="serdce.png"/></NavLink>
         <img className="Icons3" src="karzina.png"/>
       </div>
     </div>

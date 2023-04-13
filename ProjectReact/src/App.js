@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store'
 
 import { Bookstore } from './components/Bookstore';
+import './firebase';
 
 export const App = () => (
     <Provider store={store}>
