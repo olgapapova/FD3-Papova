@@ -9,9 +9,8 @@ export const RegisterPage = () => {
   return (
     <>
       <div className="Login">
-        <h1>Регистрация</h1>
+      <div className="avtor"><h1>Регистрация</h1></div>
         <SignUp/>
-        <p><NavLink className="log" to="/login">Авторизация</NavLink></p>
       </div>
     </>
 );

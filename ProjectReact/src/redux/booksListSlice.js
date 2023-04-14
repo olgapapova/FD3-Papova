@@ -11,18 +11,18 @@ export const booksListSlice = createSlice({
   initialState,
   reducers: {
 
-    updateLoadState: (state,action) => {
+    updateLoadListState: (state,action) => {
       state.dataLoadState = action.payload.state;
       state.dataLoadError = action.payload.error;
     },
 
-    updateData: (state,action) => {
+    updateDataList: (state,action) => {
       state.dataList = action.payload;
     },
 
   },
 });
 
-export const { updateLoadState, updateData } = booksListSlice.actions;
+export const { updateLoadListState, updateDataList } = booksListSlice.actions;
 
 export default booksListSlice.reducer;

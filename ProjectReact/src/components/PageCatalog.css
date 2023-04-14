@@ -1,0 +1,21 @@
+.CatalogWr {
+    width: 100%;
+}
+
+.PageButtons {
+    clear: left;
+    /*top: 100%;*/
+    margin: 0 0 30px 35%;
+    width: 100%;
+}
+
+.PageButton {
+    background-color: rgba(219, 251, 240, 0.7);
+    border: solid 1px rgb(15, 91, 65);
+}
+
+.PageButton:hover {
+    background-color: rgba(185, 251, 228, 0.7);
+    box-shadow: 4px 5px 15px -5px #616161;
+    transform: scale(1.1);
+}

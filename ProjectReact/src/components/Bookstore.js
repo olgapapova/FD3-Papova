@@ -3,13 +3,19 @@ import React, { useEffect, useState } from 'react';
 import {useAuth} from 'hooks/use-auth.js';
 import { useDispatch } from 'react-redux';
 import { booksLoad } from "../redux/booksLoad.js";
-import { booksFilterLoad } from "../redux/booksFilterLoad.js";
-import { updateData } from "../redux/booksChangeSlice.js";
+import { updateDataChange } from "../redux/booksChangeSlice.js";
 import { removeUser } from '../redux/userSlice';
 import { Basket } from './Basket';
+import avt from "../images/avt.png"
+import logo from "../images/logo_2.png"
+import karzina from "../images/karzina.png"
+import facebook from "../images/facebook.png"
+import vk from "../images/vk.png"
+import inst from "../images/inst.png"
 
 import './Bookstore.css';
 import { PagesRouter } from './PagesRouter';
+//import { defaults } from 'json-server';
 
 export const Bookstore = () => {
 
@@ -30,8 +36,7 @@ export const Bookstore = () => {
   },[])
 
   function goToBooksFilter() {
-    dispatch( updateData(bookName) );
-    dispatch( booksFilterLoad );
+    dispatch( updateDataChange(bookName) );
     const uri="/list/"+encodeURIComponent(bookName);
     console.log(uri);
     navigate(uri);
@@ -43,7 +48,7 @@ export const Bookstore = () => {
         <div className='Header'>
           <div className="HeaderConteyner">
             <NavLink to="/">
-              <img className="Logo" src="logo_2.png"></img>
+              <img className="Logo" src={logo}></img>
             </NavLink>
           </div>
           <div className="HeaderMenu">
@@ -54,7 +59,7 @@ export const Bookstore = () => {
               </label>
               <ul className="menu__box">
                 <li><NavLink to="/" className="menu__item">Главная</NavLink></li>  
-                <li><NavLink to="/catalog" className="menu__item">Весь каталог</NavLink></li>
+                <li><NavLink to="/list/catalog/page1" className="menu__item">Весь каталог</NavLink></li>
                 <li><NavLink to="/category1" className="menu__item">Художественная литература</NavLink></li>
                 <li><NavLink to="/category2" className="menu__item">Учебная и научная литература</NavLink></li>
                 <li><NavLink to="/category3" className="menu__item">Фантастика</NavLink></li>
@@ -68,7 +73,7 @@ export const Bookstore = () => {
             </div>
           </div>
           <div className="HeaderConteyner1">
-            <NavLink to="/catalog/1" className="atuin-btn">Каталог</NavLink>
+            <NavLink to="/list/catalog/page1" className="atuin-btn">Каталог</NavLink>
             <NavLink to="/aboutUs" className="atuin-btn">О нас</NavLink>
             <NavLink to="/payment" className="atuin-btn">Оплата и доставка</NavLink>
           </div>
@@ -83,10 +88,10 @@ export const Bookstore = () => {
               <button className="atuin-btn" onClick={()=>dispatch(removeUser())}>Выйти</button>
             </div>)}
           <div className="HeaderConteyner4">
-            <div><NavLink to="/login"><img className="ShopCartButton" src="avt.png"/></NavLink></div> 
+            <div><NavLink to="/login"><img className="ShopCartButton" src={avt}/></NavLink></div> 
           </div>
           <div className="HeaderConteyner3">
-            <div><img onClick={()=> setCartOpen(cartOpen= !cartOpen)} className={`ShopCartButton ${cartOpen && 'active'}`} src="karzina.png"/></div>
+            <div><img onClick={()=> setCartOpen(cartOpen= !cartOpen)} className={`ShopCartButton ${cartOpen && 'active'}`} src={karzina}/></div>
             {cartOpen && (
               <div className="ShopCart"><Basket></Basket></div>
             )}
@@ -130,9 +135,9 @@ export const Bookstore = () => {
           </p>
         </div>
         <div className="FooterCatalog">
-          <NavLink to="/"><img className="Icons" src="facebook.png" alt=""></img></NavLink>
-          <NavLink to="/"><img className="Icons" src="vk.png" alt=""></img></NavLink>
-          <NavLink to="/"><img className="Icons" src="inst.png" alt=""></img></NavLink>
+          <NavLink to="/"><img className="Icons" src={facebook} alt=""></img></NavLink>
+          <NavLink to="/"><img className="Icons" src={vk} alt=""></img></NavLink>
+          <NavLink to="/"><img className="Icons" src={inst} alt=""></img></NavLink>
         </div>
       </div>
     </div>

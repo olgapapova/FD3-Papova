@@ -5,9 +5,11 @@ import { useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { deliteOrder, setOrder } from "../redux/orderSlice.js";
 import './BooksListCategory.css';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export const Basket = () => {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const order = useSelector( state => state.order );
   let info= order.data;
@@ -46,14 +48,19 @@ export const Basket = () => {
   /*const deliteOrderBooks = () => {
     dispatch( deliteOrder(idBook) );
   };*/
-  
+  function placeAnOrder () {
+    const uri="/"+encodeURIComponent('placeAnOrder');
+    console.log(uri);
+    navigate(uri);
+  };
    
   let listOrder= useInfoBook.map((v,i) => 
     <div className="clearfix" key={i}>
       <img className="BasketImg" src={v.image}/>
       <div className="BasketBook">{v.nameBook}</div>
       <div className="BasketBook">{v.price} руб.</div>
-      <p onClick={deliteOrderBooks(v.id)}><FaTrash className='DeliteIcon' /></p>
+      <p onClick={deliteOrderBooks(v.id)}><FaTrash className='DeliteIcon' /></p><br/><br/>
+      <input className="btn1-order btn1" type='button' value={'Оформить заказ'} onClick={placeAnOrder}/>
     </div>
   );
   

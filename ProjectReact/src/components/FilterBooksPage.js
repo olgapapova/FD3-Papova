@@ -6,14 +6,22 @@ import  BooksListCategory  from './BooksListCategory';
 
 export const FilterBooksPage = () => {
 
-  const booksFilter = useSelector( state => state.booksFilter );
-  console.log(booksFilter)
+  const books = useSelector(state => state.books );
   let booksList;
+  let booksListFilter;
+
+  const booksFilter = useSelector(state => state.booksChange.dataChange);
+  console.log(booksFilter);
 
   function componentF () {
-    
-    booksList=booksFilter.dataFilter.map(v=> 
+   if (books.data !==null) {
+
+      booksListFilter=books.data.filter(s=> s.nameBook === booksFilter || s.author === booksFilter);
+      console.log(booksListFilter);
+
+      booksList=booksListFilter.map(v => 
       <BooksListCategory key={v.id} info={v}/>)
+   }
   }
   componentF();
 
