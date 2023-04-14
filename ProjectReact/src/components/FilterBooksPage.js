@@ -9,14 +9,17 @@ export const FilterBooksPage = () => {
   const books = useSelector(state => state.books );
   let booksList;
   let booksListFilter;
+  console.log(books);
 
-  const booksFilter = useSelector(state => state.booksChange.dataChange);
+  let booksFilter = useSelector(state => state.booksChange.dataChange);
   console.log(booksFilter);
+  if (booksFilter !== null)
+    booksFilter=booksFilter.toLowerCase().trim();
 
   function componentF () {
    if (books.data !==null) {
-
-      booksListFilter=books.data.filter(s=> s.nameBook === booksFilter || s.author === booksFilter);
+      console.log(books.data)
+      booksListFilter=books.data.filter(s=> s.nameBook === booksFilter || s.author.toLowerCase() === booksFilter);
       console.log(booksListFilter);
 
       booksList=booksListFilter.map(v => 

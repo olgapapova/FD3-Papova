@@ -1,13 +1,19 @@
-import { useSelector } from 'react-redux';
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { openOrClose, deleteData } from "../redux/orderSlice.js";
 
 import './BooksListCategory.css';
 
 export const PlaceAnOrderPage = () => {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  let cartOp=useSelector(state => state.order.cartOpen);
 
   function homePage (){
+    dispatch( openOrClose(cartOp ? false : true) );
+    dispatch( deleteData() );
     const uri="/";
     navigate(uri);
   };

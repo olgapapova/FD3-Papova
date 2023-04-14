@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState={
+  cartOpen:false,
   data:[],  
 }
 
@@ -13,15 +14,22 @@ export const orderSlice = createSlice({
       state.data.push(action.payload);
     },
 
-    deliteOrder: (state, action) => {
+    deleteOrder: (state, action) => {
       let booksDelite=state.data.filter(b => b.id !==action.payload);
       state.data=booksDelite;
-      console.log(booksDelite);
+    },
+
+    openOrClose: (state, action) => {
+      state.cartOpen = action.payload;
+    },
+
+    deleteData: (state,action) => {
+      state.data=[];
     },
 
   },
 });
 
-export const { setOrder, deliteOrder } = orderSlice.actions;
+export const { setOrder, deleteOrder, openOrClose, deleteData } = orderSlice.actions;
 
 export default orderSlice.reducer;

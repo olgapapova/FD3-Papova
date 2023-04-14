@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setOrder } from "../redux/orderSlice.js";
+import karzina from "../images/karzina.png"
 import img1_1 from "../images/img1_1.jpg"
 import img1_2 from "../images/img1_2.jpg"
 import img1_3 from "../images/img1_3.jpg"
@@ -75,6 +76,76 @@ import img3_17 from "../images/img3_17.jpg"
 import img3_18 from "../images/img3_18.jpg"
 import img3_19 from "../images/img3_19.jpg"
 import img3_20 from "../images/img3_20.jpg"
+import img4_1 from "../images/img4_1.jpg"
+import img4_2 from "../images/img4_2.jpg"
+import img4_3 from "../images/img4_3.jpg"
+import img4_4 from "../images/img4_4.jpg"
+import img4_5 from "../images/img4_5.jpg"
+import img4_6 from "../images/img4_6.jpg"
+import img4_7 from "../images/img4_7.jpg"
+import img4_8 from "../images/img4_8.jpg"
+import img4_9 from "../images/img4_9.jpg"
+import img4_10 from "../images/img4_10.jpg"
+import img4_11 from "../images/img4_11.jpg"
+import img4_12 from "../images/img4_12.jpg"
+import img4_13 from "../images/img4_13.jpg"
+import img4_14 from "../images/img4_14.jpg"
+import img4_15 from "../images/img4_15.jpg"
+import img4_16 from "../images/img4_16.jpg"
+import img4_17 from "../images/img4_17.jpg"
+import img4_18 from "../images/img4_18.jpg"
+import img4_19 from "../images/img4_19.jpg"
+import img4_20 from "../images/img4_20.jpg"
+import img4_21 from "../images/img4_21.jpg"
+import img4_22 from "../images/img4_22.jpg"
+import img5_1 from "../images/img5_1.jpg"
+import img5_2 from "../images/img5_2.jpg"
+import img5_3 from "../images/img5_3.jpg"
+import img5_4 from "../images/img5_4.jpg"
+import img5_5 from "../images/img5_5.jpg"
+import img5_6 from "../images/img5_6.jpg"
+import img5_7 from "../images/img5_7.jpg"
+import img5_8 from "../images/img5_8.jpg"
+import img5_9 from "../images/img5_9.jpg"
+import img5_10 from "../images/img5_10.jpg"
+import img5_11 from "../images/img5_11.jpg"
+import img5_12 from "../images/img5_12.jpg"
+import img5_13 from "../images/img5_13.jpg"
+import img5_14 from "../images/img5_14.jpg"
+import img5_15 from "../images/img5_15.jpg"
+import img5_16 from "../images/img5_16.jpg"
+import img5_17 from "../images/img5_17.jpg"
+import img5_18 from "../images/img5_18.jpg"
+import img5_19 from "../images/img5_19.jpg"
+import img5_20 from "../images/img5_20.jpg"
+import img5_21 from "../images/img5_21.jpg"
+import img5_22 from "../images/img5_22.jpg"
+import img5_23 from "../images/img5_23.jpg"
+import img5_24 from "../images/img5_24.jpg"
+import img5_25 from "../images/img5_25.jpg"
+import img5_26 from "../images/img5_26.jpg"
+import img5_27 from "../images/img5_27.jpg"
+import img5_28 from "../images/img5_28.jpg"
+import img5_29 from "../images/img5_29.jpg"
+import img6_1 from "../images/img6_1.jpg"
+import img6_2 from "../images/img6_2.jpg"
+import img6_3 from "../images/img6_3.jpg"
+import img6_4 from "../images/img6_4.jpg"
+import img6_5 from "../images/img6_5.jpg"
+import img6_6 from "../images/img6_6.jpg"
+import img6_7 from "../images/img6_7.jpg"
+import img6_8 from "../images/img6_8.jpg"
+import img6_9 from "../images/img6_9.jpg"
+import img6_10 from "../images/img6_10.jpg"
+import img6_11 from "../images/img6_11.jpg"
+import img6_12 from "../images/img6_12.jpg"
+import img7_1 from "../images/img7_1.jpg"
+import img7_2 from "../images/img7_2.jpg"
+import img7_3 from "../images/img7_3.jpg"
+import img7_4 from "../images/img7_4.jpg"
+import img7_5 from "../images/img7_5.jpg"
+import img7_6 from "../images/img7_6.jpg"
+import img7_7 from "../images/img7_7.jpg"
 
 import './BooksListCategory.css';
 
@@ -249,6 +320,276 @@ const BooksListCategory = (props) => {
     case 'img2_19.jpg':
       img=img2_19;
       break;
+    case 'img3_1.jpg':
+      img=img3_1;
+      break;
+    case 'img3_2.jpg':
+      img=img3_2;
+      break;
+    case 'img3_3.jpg':
+      img=img3_3;
+      break;
+    case 'img3_4.jpg':
+      img=img3_4;
+      break;
+    case 'img3_5.jpg':
+      img=img3_5;
+      break;
+    case 'img3_6.jpg':
+      img=img3_6;
+      break;
+    case 'img3_7.jpg':
+      img=img3_7;
+      break;
+    case 'img3_8.jpg':
+      img=img3_8;
+      break;
+    case 'img3_9.jpg':
+      img=img3_9;
+      break;
+    case 'img3_10.jpg':
+      img=img3_10;
+      break;
+    case 'img3_11.jpg':
+      img=img3_11;
+      break;
+    case 'img3_12.jpg':
+      img=img3_12;
+      break;
+    case 'img3_13.jpg':
+      img=img3_13;
+      break;
+    case 'img3_14.jpg':
+      img=img3_14;
+      break;
+    case 'img3_15.jpg':
+      img=img3_15;
+      break;
+    case 'img3_16.jpg':
+      img=img3_16;
+      break;
+    case 'img3_17.jpg':
+      img=img3_17;
+      break;
+    case 'img3_18.jpg':
+      img=img3_18;
+      break;
+    case 'img3_19.jpg':
+      img=img3_19;
+      break;
+    case 'img3_20.jpg':
+      img=img3_20;
+      break;
+    case 'img4_1.jpg':
+      img=img4_1;
+      break;
+    case 'img4_2.jpg':
+      img=img4_2;
+      break;
+    case 'img4_3.jpg':
+      img=img4_3;
+      break;
+    case 'img4_4.jpg':
+      img=img4_4;
+      break;
+    case 'img4_5.jpg':
+      img=img4_5;
+      break;
+    case 'img4_6.jpg':
+      img=img4_6;
+      break;
+    case 'img4_7.jpg':
+      img=img4_7;
+      break;
+    case 'img4_8.jpg':
+      img=img4_8;
+      break;
+    case 'img4_9.jpg':
+      img=img4_9;
+      break;
+    case 'img4_10.jpg':
+      img=img4_10;
+      break;
+    case 'img4_11.jpg':
+      img=img4_11;
+      break;
+    case 'img4_12.jpg':
+      img=img4_12;
+      break;
+    case 'img4_13.jpg':
+      img=img4_13;
+      break;
+    case 'img4_14.jpg':
+      img=img4_14;
+      break;
+    case 'img4_15.jpg':
+      img=img4_15;
+      break;
+    case 'img4_16.jpg':
+      img=img4_16;
+      break;
+    case 'img4_17.jpg':
+      img=img4_17;
+      break;
+    case 'img4_18.jpg':
+      img=img4_18;
+      break;
+    case 'img4_19.jpg':
+      img=img4_19;
+      break;
+    case 'img4_20.jpg':
+      img=img4_20;
+      break;
+    case 'img4_21.jpg':
+      img=img4_21;
+      break;
+    case 'img4_22.jpg':
+      img=img4_22;
+      break;
+    case 'img5_1.jpg':
+      img=img5_1;
+      break;
+    case 'img5_2.jpg':
+      img=img5_2;
+      break;
+    case 'img5_3.jpg':
+      img=img5_3;
+      break;
+    case 'img5_4.jpg':
+      img=img5_4;
+      break;
+    case 'img5_5.jpg':
+      img=img5_5;
+      break;
+    case 'img5_6.jpg':
+      img=img5_6;
+      break;
+    case 'img5_7.jpg':
+      img=img5_7;
+      break;
+    case 'img5_8.jpg':
+      img=img5_8;
+      break;
+    case 'img5_9.jpg':
+      img=img5_9;
+      break;
+    case 'img5_10.jpg':
+      img=img5_10;
+      break;
+    case 'img5_11.jpg':
+      img=img5_11;
+      break;
+    case 'img5_12.jpg':
+      img=img5_12;
+      break;
+    case 'img5_13.jpg':
+      img=img5_13;
+      break;
+    case 'img5_14.jpg':
+      img=img5_14;
+      break;
+    case 'img5_15.jpg':
+      img=img5_15;
+      break;
+    case 'img5_16.jpg':
+      img=img5_16;
+      break;
+    case 'img5_17.jpg':
+      img=img5_17;
+      break;
+    case 'img5_18.jpg':
+      img=img5_18;
+      break;
+    case 'img5_19.jpg':
+      img=img5_19;
+      break;
+    case 'img5_20.jpg':
+      img=img5_20;
+      break;
+    case 'img5_21.jpg':
+      img=img5_21;
+      break;
+    case 'img5_22.jpg':
+      img=img5_22;
+      break;
+    case 'img5_23.jpg':
+      img=img5_23;
+      break;
+    case 'img5_24.jpg':
+      img=img5_24;
+      break;
+    case 'img5_25.jpg':
+      img=img5_25;
+      break;
+    case 'img5_26.jpg':
+      img=img5_26;
+      break;
+    case 'img5_27.jpg':
+      img=img5_27;
+      break;
+    case 'img5_28.jpg':
+      img=img5_28;
+      break;
+    case 'img5_29.jpg':
+      img=img5_29;
+      break;
+    case 'img6_1.jpg':
+      img=img6_1;
+      break;
+    case 'img6_2.jpg':
+      img=img6_2;
+      break;
+    case 'img6_3.jpg':
+      img=img6_3;
+      break;
+    case 'img6_4.jpg':
+      img=img6_4;
+      break;
+    case 'img6_5.jpg':
+      img=img6_5;
+      break;
+    case 'img6_6.jpg':
+      img=img6_6;
+      break;
+    case 'img6_7.jpg':
+      img=img6_7;
+      break;
+    case 'img6_8.jpg':
+      img=img6_8;
+      break;
+    case 'img6_9.jpg':
+      img=img6_9;
+      break;
+    case 'img6_10.jpg':
+      img=img6_10;
+      break;
+    case 'img6_11.jpg':
+      img=img6_11;
+      break;
+    case 'img6_12.jpg':
+      img=img6_12;
+      break;
+    case 'img7_1.jpg':
+      img=img7_1;
+      break;
+    case 'img7_2.jpg':
+      img=img7_2;
+      break;
+    case 'img7_3.jpg':
+      img=img7_3;
+      break;
+    case 'img7_4.jpg':
+      img=img7_4;
+      break;
+    case 'img7_5.jpg':
+      img=img7_5;
+      break;
+    case 'img7_6.jpg':
+      img=img7_6;
+      break;
+    case 'img7_7.jpg':
+      img=img7_7;
+      break;
   }
 
   function addToOrder() {
@@ -269,7 +610,7 @@ const BooksListCategory = (props) => {
       <div className="TextBookName">{price} руб.</div>
       <div className="TextBook">
         <NavLink onClick={addToOrder}>
-          <img className="Icons3" src="karzina.png"/>
+          <img className="Icons3" src={karzina}/>
         </NavLink>
       </div>
     </div>

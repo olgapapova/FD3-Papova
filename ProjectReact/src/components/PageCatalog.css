@@ -14,6 +14,12 @@
     border: solid 1px rgb(15, 91, 65);
 }
 
+.PageButton .active
+{
+    background-color: rgba(255, 255, 255, 0.7);
+    border: solid opx rgb(15, 91, 65);
+}
+
 .PageButton:hover {
     background-color: rgba(185, 251, 228, 0.7);
     box-shadow: 4px 5px 15px -5px #616161;

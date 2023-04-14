@@ -11,7 +11,9 @@ const Form = ({title, handClick}) => {
       <div className="PlaceAnOrderWr">
         <div className='PlaceAnOrder'>
           <input className='email' type="email" value={email} onChange={(eo)=>setEmail(eo.target.value)} placeholder="email" required/>
+          <p className="Valid">Введите Email не менее 8 символов</p>
           <input className='name' type="password" value={pass} onChange={(eo)=>setPass(eo.target.value)} placeholder="password" required/>
+          <p className="Valid">Введите пароль не менее 6 символов</p>
           <button className='btn1'onClick={()=>handClick(email, pass)}>{title}</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <NavLink to={title==="Зарегистрироваться" ? "/login" : "/register"}><button className='btn1'>{title==="Зарегистрироваться" ? "Авторизация" : "Регистрация"}</button></NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <NavLink to="/"><button className='btn1'>Отмена</button></NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

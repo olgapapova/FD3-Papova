@@ -1,9 +1,10 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import {useAuth} from 'hooks/use-auth.js';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { booksLoad } from "../redux/booksLoad.js";
 import { updateDataChange } from "../redux/booksChangeSlice.js";
+import { openOrClose } from "../redux/orderSlice.js";
 import { removeUser } from '../redux/userSlice';
 import { Basket } from './Basket';
 import avt from "../images/avt.png"
@@ -12,6 +13,7 @@ import karzina from "../images/karzina.png"
 import facebook from "../images/facebook.png"
 import vk from "../images/vk.png"
 import inst from "../images/inst.png"
+import {FaTimes} from 'react-icons/fa';
 
 import './Bookstore.css';
 import { PagesRouter } from './PagesRouter';
@@ -19,8 +21,10 @@ import { PagesRouter } from './PagesRouter';
 
 export const Bookstore = () => {
 
-  let [cartOpen, setCartOpen]=useState(false);
   let [bookName, setBookName]=useState("");
+
+  let cartOpen=useSelector(state => state.order.cartOpen);
+  let filledBasket=useSelector(state => state.order.data);
 
   let navigate = useNavigate();
   const {isAuth, email} = useAuth();
@@ -38,6 +42,12 @@ export const Bookstore = () => {
   function goToBooksFilter() {
     dispatch( updateDataChange(bookName) );
     const uri="/list/"+encodeURIComponent(bookName);
+    console.log(uri);
+    navigate(uri);
+  };
+
+  function placeAnOrder () {
+    const uri="/"+encodeURIComponent('placeAnOrder');
     console.log(uri);
     navigate(uri);
   };
@@ -91,9 +101,13 @@ export const Bookstore = () => {
             <div><NavLink to="/login"><img className="ShopCartButton" src={avt}/></NavLink></div> 
           </div>
           <div className="HeaderConteyner3">
-            <div><img onClick={()=> setCartOpen(cartOpen= !cartOpen)} className={`ShopCartButton ${cartOpen && 'active'}`} src={karzina}/></div>
+            <div><img onClick={()=> dispatch( openOrClose(cartOpen ? false : true) )} className={`ShopCartButton ${cartOpen && 'active'}`} src={karzina}/></div>
             {cartOpen && (
-              <div className="ShopCart"><Basket></Basket></div>
+              <div className="ShopCart">
+                <p onClick={()=>dispatch( openOrClose(cartOpen ? false : true) )}><FaTimes className='CloseBasket' /></p>
+                <Basket/>
+                {filledBasket.length !==0 && <input className="btn1-order btn1" type='button' value={'Оформить заказ'} onClick={placeAnOrder}/>}
+              </div>
             )}
           </div>
         </div>
