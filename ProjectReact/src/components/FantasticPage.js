@@ -12,7 +12,6 @@ export const FantasticPage = () => {
   function componentF () {
     if (books.data !== null) {
       let booksListFilter=books.data.filter(s => s.category===3);
-      console.log(booksListFilter)
     
       booksList=booksListFilter.map(v=> 
         <BooksListCategory key={v.id} info={v}/>)

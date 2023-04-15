@@ -11,6 +11,17 @@ html, body {
     grid-template-rows: auto 1fr auto;
 }
 
+.sch
+{
+  position: absolute;
+  float: right;
+  top: 20%;
+  right: 8%;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #0F9467;
+}
+
 .Header 
 {
     grid-column: 1/3;

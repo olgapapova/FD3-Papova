@@ -21,10 +21,9 @@ import { PagesRouter } from './PagesRouter';
 export const Bookstore = () => {
 
   let [bookName, setBookName]=useState("");
-  console.log(localStorage.getItem('booksOrder'))
 
   let cartOpen=useSelector(state => state.order.cartOpen);
-  let filledBasket=useSelector(state => state.order);
+  let schCount=useSelector(state => state.order.dataSch);
 
   let navigate = useNavigate();
   const {isAuth, email} = useAuth();
@@ -42,13 +41,11 @@ export const Bookstore = () => {
   function goToBooksFilter() {
     dispatch( updateDataChange(bookName) );
     const uri="/list/"+encodeURIComponent(bookName);
-    console.log(uri);
     navigate(uri);
   };
 
   function placeAnOrder () {
     const uri="/"+encodeURIComponent('placeAnOrder');
-    console.log(uri);
     navigate(uri);
   };
 
@@ -101,13 +98,15 @@ export const Bookstore = () => {
             <div><NavLink to="/login"><img className="ShopCartButton" src={avt}/></NavLink></div> 
           </div>
           <div className="HeaderConteyner3">
+            <div className="sch">{schCount}</div>
             <div><img onClick={()=> dispatch( openOrClose(cartOpen ? false : true) )} className={`ShopCartButton ${cartOpen && 'active'}`} src={karzina}/></div>
             {cartOpen && (
               <div className="ShopCart">
                 <p onClick={()=>dispatch( openOrClose(cartOpen ? false : true) )}><FaTimes className='CloseBasket' /></p>
                 <Basket/>
                 {
-                /*(filledBasket.data.length !==0 &&*/ (localStorage.getItem('booksOrder') !==undefined && localStorage.getItem('booksOrder').length !==0) ? <input className={`${'btn1-order btn1'} ${'btn3'}`} type='button' value={'Оформить заказ'} onClick={placeAnOrder}/>: null }
+                localStorage.getItem('booksOrder')?.length !== 0 ? <input className={`${'btn1-order btn1'} ${'btn3'}`} type='button' value={'Оформить заказ'} onClick={placeAnOrder}/>: null 
+                }
               </div>
             )}
           </div>

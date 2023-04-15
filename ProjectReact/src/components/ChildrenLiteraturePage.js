@@ -12,7 +12,6 @@ export const ChildrenLiteraturePage = () => {
   function componentF () {
     if (books.data !== null) {
       let booksListFilter=books.data.filter(s => s.category===5);
-      console.log(booksListFilter)
     
       booksList=booksListFilter.map(v=> 
         <BooksListCategory key={v.id} info={v}/>)
@@ -26,7 +25,10 @@ export const ChildrenLiteraturePage = () => {
         <NavLink to="/">Главная</NavLink><span> &gt; Детская литература</span>
       </div>
       <div>
-        {booksList}
+        { (books.dataLoadState===0) && "нет данных" }
+        { (books.dataLoadState===1) && "Загрузка данных..." }
+        { (books.dataLoadState===2) &&  booksList }
+        { (books.dataLoadState===3) && "error: "+books.dataLoadError }
       </div>
     </>
 );

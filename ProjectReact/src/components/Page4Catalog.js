@@ -30,6 +30,9 @@ export const Page4Catalog = () => {
     }
   }
   componentLs();
+  let nd= <div className="noData">нет данных</div>
+  let zd= <div className="noData">Загрузка данных...</div>
+  let od= <div className="noData">"error: "+{booksPage.dataLoadError}</div>
 
   return (
     <>
@@ -37,10 +40,10 @@ export const Page4Catalog = () => {
         <NavLink to="/">Главная</NavLink><span> &gt; Каталог &gt; 4</span>
       </div>
       <div className="CatalogWr">
-        { (booksPage.dataLoadState===0) && "нет данных" }
-        { (booksPage.dataLoadState===1) && "Загрузка данных..." }
+        { (booksPage.dataLoadState===0) && nd }
+        { (booksPage.dataLoadState===1) && zd }
         { (booksPage.dataLoadState===2) &&  booksList }
-        { (booksPage.dataLoadState===3) && "error: "+booksPage.dataLoadError }
+        { (booksPage.dataLoadState===3) && od }
       </div>
       <div className="PageButtons">
       <NavLink to="/list/catalog/page1"><input className={`PageButton ${numPage===1 && 'pageActive'}`} type="button" value={1} onClick={()=> dispatch( choosePage(1) )}/></NavLink>&nbsp;&nbsp;

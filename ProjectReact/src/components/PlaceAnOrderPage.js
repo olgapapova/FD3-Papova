@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { openOrClose, deleteData } from "../redux/orderSlice.js";
+import { openOrClose, deleteData, resetSch } from "../redux/orderSlice.js";
 
 import './BooksListCategory.css';
 
@@ -18,6 +18,7 @@ export const PlaceAnOrderPage = () => {
   function homePage (){
     dispatch( openOrClose(cartOp ? false : true) );
     dispatch( deleteData() );
+    dispatch( resetSch() );
     const uri="/";
     navigate(uri);
   };
