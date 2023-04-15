@@ -20,6 +20,7 @@ import { Page2Catalog } from '../components/Page2Catalog';
 import { Page3Catalog } from '../components/Page3Catalog';
 import { Page4Catalog } from '../components/Page4Catalog';
 import { Page5Catalog } from '../components/Page5Catalog';
+import { PageBook } from '../components/PageBook';
 
 export const PagesRouter = () => {
           
@@ -44,6 +45,7 @@ export const PagesRouter = () => {
         <Route path="/list/catalog/page3" element={<Page3Catalog/>} />
         <Route path="/list/catalog/page4" element={<Page4Catalog/>} />
         <Route path="/list/catalog/page5" element={<Page5Catalog/>} />
+        <Route path="/:bookName" element={<PageBook/>} />
       </Routes>
     );
     

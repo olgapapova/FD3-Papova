@@ -15,8 +15,8 @@ export const orderSlice = createSlice({
     },
 
     deleteOrder: (state, action) => {
-      let booksDelite=state.data.filter(b => b.id !==action.payload);
-      state.data=booksDelite;
+      let booksDelete=state.data.filter(b => b.id !==action.payload);
+      state.data=booksDelete;
     },
 
     openOrClose: (state, action) => {

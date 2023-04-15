@@ -222,11 +222,22 @@ figure.effect-text-one:hover p {
   }
 }
 
+@media all and (max-width: 270px)
+{
+  .hover-text-one {
+	margin: 0 0 0 0;
+	width: 75%;
+  }
+  .hover-text-one figure figcaption {
+	font-size: 9px;
+  }
+}
+
 @media all and (max-width: 225px)
 {
   .hover-text-one {
 	margin: 0 0 0 0;
-	width: 80%;
+	width: 75%;
   }
   .hover-text-one figure figcaption {
 	font-size: 8px;
@@ -241,9 +252,15 @@ figure.effect-text-one:hover p {
 {
   .hover-text-one {
 	margin: 0 0 0 0;
-	width: 70%;
+	width: 65%;
   }
   .hover-text-one figure figcaption {
 	font-size: 6px;
   }
+  figure.effect-text-one img {
+	width: calc(90% + 10px);
+	opacity: 0.7;
+	transition: opacity 0.35s, transform 0.35s;
+	transform: scale(1.1);
+}
 }

@@ -5,6 +5,7 @@ import booksChangeReducer from './booksChangeSlice';
 import booksListReducer from './booksListSlice';
 import userReducer from './userSlice';
 import orderReducer from './orderSlice';
+import chooseReducer from './chooseSlice';
 
 export const store = configureStore({
     reducer: {
@@ -13,5 +14,6 @@ export const store = configureStore({
         booksList: booksListReducer,
         user: userReducer,
         order: orderReducer,
+        chooseBook: chooseReducer,
     },
 })

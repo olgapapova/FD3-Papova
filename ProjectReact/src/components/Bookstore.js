@@ -17,14 +17,14 @@ import {FaTimes} from 'react-icons/fa';
 
 import './Bookstore.css';
 import { PagesRouter } from './PagesRouter';
-//import { defaults } from 'json-server';
 
 export const Bookstore = () => {
 
   let [bookName, setBookName]=useState("");
+  console.log(localStorage.getItem('booksOrder'))
 
   let cartOpen=useSelector(state => state.order.cartOpen);
-  let filledBasket=useSelector(state => state.order.data);
+  let filledBasket=useSelector(state => state.order);
 
   let navigate = useNavigate();
   const {isAuth, email} = useAuth();
@@ -106,7 +106,8 @@ export const Bookstore = () => {
               <div className="ShopCart">
                 <p onClick={()=>dispatch( openOrClose(cartOpen ? false : true) )}><FaTimes className='CloseBasket' /></p>
                 <Basket/>
-                {filledBasket.length !==0 && <input className="btn1-order btn1" type='button' value={'Оформить заказ'} onClick={placeAnOrder}/>}
+                {
+                /*(filledBasket.data.length !==0 &&*/ (localStorage.getItem('booksOrder') !==undefined && localStorage.getItem('booksOrder').length !==0) ? <input className={`${'btn1-order btn1'} ${'btn3'}`} type='button' value={'Оформить заказ'} onClick={placeAnOrder}/>: null }
               </div>
             )}
           </div>

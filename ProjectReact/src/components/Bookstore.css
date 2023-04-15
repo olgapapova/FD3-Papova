@@ -423,7 +423,7 @@ form
   }
   .HeaderConteyner
   {
-    margin: 10px 0 0 20px;
+    display: none;
   }
   .HeaderConteyner2
   {
@@ -505,6 +505,11 @@ form
     padding-top: 80px;
     padding-left: 20px;
   }
+  .menu__btn 
+  {
+    top: 27px;
+    left: 50px;
+  } 
   .Menu
   {
     display: none;
@@ -589,7 +594,7 @@ form
   .menu__btn 
   {
     top: 27px;
-    left: 120px;
+    left: 50px;
     width: 30px;
     height: 26px;
   } 
@@ -607,12 +612,12 @@ form
   }
   .HeaderConteyner3
   {
-    padding: 25px 25px 0 0;
+    padding: 20px 25px 0 0;
   }
 
   .HeaderConteyner4
   {
-    padding: 25px 25px 0 0;
+    padding: 20px 25px 0 0;
   }
   .HeaderConteyner2
   {
@@ -624,9 +629,15 @@ form
   }
   .menu__btn 
   {
-    top: 21px;
+    top: 22px;
     left: 40px;
   } 
+  .atuin-btn
+  {
+    height: 30px;
+    font-size: 10px;
+    padding-top: 3px;
+  }
   .Search 
   {
     height: 30px;
@@ -637,16 +648,56 @@ form
   }
 }
 
-@media all and (max-width: 620px)
+@media all and (max-width: 690px)
 {
+  .menu__btn 
+  {
+    top: 22px;
+    left: 5px;
+  } 
+  .Header
+  {
+    padding-left: 10px;
+  }
+  .HeaderConteyner2
+  {
+    padding: 20px 0 0 50px;
+  }
+}
+
+@media all and (max-width: 660px)
+{
+  .HeaderConteyner5
+  {
+    padding: 13px 0 0 10px;
+  }
   .HeaderConteyner3
   {
-    padding: 25px 17px 0 0;
+    padding: 20px 12px 0 0;
   }
 
   .HeaderConteyner4
   {
-    padding: 25px 17px 0 0;
+    padding: 20px 12px 0 0;
+  }
+}
+
+@media all and (max-width: 620px)
+{
+  .ShopCart
+  {
+    width: 60%;
+    top: 140px;
+  }
+
+  .HeaderConteyner3
+  {
+    padding: 20px 17px 0 0;
+  }
+
+  .HeaderConteyner4
+  {
+    padding: 20px 17px 0 0;
   }
   .menu__btn 
   {
@@ -655,16 +706,12 @@ form
   } 
   .HeaderConteyner2
   {
-    padding: 20px 0 0 30px;
+    padding: 20px 0 0 40px;
   }
-}
-
-@media all and (max-width: 530px)
-{
   .menu__btn 
   {
-    top: 73px;
-    left: 180px;
+    top: 80px;
+    left: 155px;
   }
   .HeaderConteyner2
   {
@@ -693,41 +740,125 @@ form
   }
 }
 
+@media all and (max-width: 530px)
+{
+  .menu__btn 
+  {
+    top: 80px;
+    left: 155px;
+  }
+  .HeaderConteyner2
+  {
+    float: none;
+    padding: 0 0 0 14px;
+  }
+  .Header 
+  {
+    padding: 0 0 15px 0;
+  }
+  .HeaderConteyner3
+  {
+    float: left;
+    padding: 20px 0 0 25px;
+  }
+
+  .HeaderConteyner4
+  {
+    float: left;
+    padding: 20px 0 0 25px;
+  }
+  .Change
+  {
+    padding-top: 130px;
+    padding-left: 10px;
+  }
+  .TitleOrder
+  {
+    font-size: 14px;
+  }
+  .CloseBasket
+  {
+    top: -5px;
+    right: 10px;
+
+  }
+}
+
 @media all and (max-width: 340px)
 {
+  .ShopCart
+  {
+    width: 80%;
+    top:100px;
+  }
   .HeaderConteyner2
   {
     display: none;
   }
   .menu__btn 
   {
-    top: 20px;
+    top: 28px;
   }
   .Change
   {
     padding-top: 80px;
     padding-left: 10px;
   }
+  .HeaderConteyner5
+  {
+    padding: 17px 0 0 10px;
+  }
 }
 
 @media all and (max-width: 310px)
 {
+  .ShopCart
+  {
+    width: 80%;
+    top:140px;
+  }
   .menu__btn 
   {
-    top: 20px;
+    top: 76px;
+    left: 25px;
   }
   .FooterCatalog
   {
     padding: 15px 5px 15px 30px;
   }
+  .Header 
+  {
+    padding: 0 0 60px 0;
+  }
+  .Change
+  {
+    padding-top: 130px;
+  }
+}
+
+@media all and (max-width: 275px)
+{
+  .ShopCartButton
+  {
+    width: 25px;
+    margin: 0 5px 0 0px;
+  }
+  .HeaderConteyner5
+  {
+    padding: 7px 0 0 0px;
+  }
 }
 
 @media all and (max-width: 250px)
 {
+  .hover-text-one
+  {
+    width: 70%;
+  }
   .menu__btn 
   {
-    top: 60px;
-    left: 20px;
+    top: 70px;
+    left: 25px;
   }
   .Header 
   {
@@ -756,6 +887,13 @@ form
     width: 20px;
     margin: 0 15px 0 5px;
   }
+  .HeaderConteyner5
+  { 
+    position:absolute;
+    padding: 7px 0 0 0px;
+    top: 50px;
+    left: 70px;
+  }
 }
 
 @media all and (max-width: 230px)
@@ -765,17 +903,38 @@ form
     padding: 10px 5px 5px 5px;
     width: 60%;
   }
+  .hover-text-one
+  {
+    width: 60%;
+  }
 }
 
 @media all and (max-width: 190px)
 {
+  .HeaderConteyner3
+  {
+    float: left;
+    padding: 20px 0 0 15px;
+  }
+
+  .HeaderConteyner4
+  {
+    float: left;
+    padding: 20px 0 0 15px;
+  }
+  .menu__btn 
+  {
+    top: 70px;
+    left: 15px;
+    right: 0;
+  }
   .menu__btn {
     width: 20px;
     height: 20px;
   }
   .Icons2
   {
-    width: 20px;
+    width: 30px;
   }
   .FooterTitle
   {
@@ -784,6 +943,18 @@ form
   .FooterText
   {
     font-size: 8px;
+  }
+  .HeaderConteyner5
+  { 
+
+    padding: 0 0 0 0;
+    top: 55px;
+    left: 55px;
+    width: 50px;
+  }
+  .hover-text-one
+  {
+    width: 50%;
   }
 }
 

@@ -19,7 +19,7 @@ export const FilterBooksPage = () => {
   function componentF () {
    if (books.data !==null) {
       console.log(books.data)
-      booksListFilter=books.data.filter(s=> s.nameBook === booksFilter || s.author.toLowerCase() === booksFilter);
+      booksListFilter=books.data.filter(s=> s.nameBook.toLowerCase() === booksFilter || s.author.toLowerCase() === booksFilter);
       console.log(booksListFilter);
 
       booksList=booksListFilter.map(v => 
@@ -33,6 +33,11 @@ export const FilterBooksPage = () => {
       <div className="Navigation">
         <NavLink to="/">Главная</NavLink><span> &gt; </span>
       </div>
+      {
+        books.data !==null ? (booksListFilter.length ===0) &&
+        <div className="mes">По данному запросу ничего не найдено!</div> 
+        : null
+      }
       <div>
         {booksList}
       </div>

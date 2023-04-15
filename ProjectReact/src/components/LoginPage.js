@@ -11,7 +11,6 @@ export const LoginPage = () => {
       <div className="Login">
         <div className="avtor"><h1 >Авторизация</h1></div>
         <Login/>
-        <p><NavLink className="log" to="/register">Регистрация</NavLink></p>
       </div>
     </>
 );

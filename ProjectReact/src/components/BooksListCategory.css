@@ -3,6 +3,18 @@
   font-size: 12px;
 }
 
+.Navigation
+{
+    font-size: 14px;
+    margin: 20px 0 20px 55px;
+}
+
+.mes
+{
+  font-size: 26px;
+  padding: 40px 0 300px 50px;
+}
+
 .CategoryBook
 {
     width: 300px;
@@ -102,7 +114,7 @@
   color: #0F9467;
   float: right;
   position: relative;
-  top: -25px;
+  top: 35px;
   right: 35px;
   cursor: pointer;
   transition: color, transform 500ms ease;
@@ -131,7 +143,6 @@
 
 .btn1 {
   float: left;
-  /*margin: 5px 8px 10px 3px;*/
 }
 
 .btn1-order
@@ -202,7 +213,6 @@
   min-width: 138px;
   height: 44px;
   border-radius: 4px;
-  /*float:left;*/
   border: 0px solid rgb(15, 91, 65);
   background:#0F9467;
   background: -ms-linear-gradient(top, rgb(219, 251, 240), #1dd696);
@@ -231,9 +241,25 @@
   outline: none;
 }
 
+.btn3 {
+  margin: 5px 8px 25px 25px;
+}
+
 .avtor
 {
   padding-left: 25%;
+}
+
+.blok
+{
+  background-color: #8c8c8c;
+  border: none;
+}
+
+.backBookText
+{
+  width: 150px;
+  float: left;
 }
 
 @media all and (max-width: 1300px)
@@ -353,10 +379,18 @@
   {
     height: 350px;
   }
+  .PlaceAnOrder {
+    width: 80%;
+    padding: 30px 30px 6px 30px;
+  }
 }
 
 @media all and (max-width: 730px)
 {
+  .PlaceAnOrder {
+    width: 65%;
+    padding: 30px 30px 6px 30px;
+  }
   .CategoryBook
   {
     width: 25%;
@@ -407,6 +441,10 @@
     height: 320px;
     margin: 20px 20px 30px 20px;
   }
+  .PlaceAnOrder {
+    width: 55%;
+    padding: 30px 30px 6px 30%px;
+  }
 }
 
 @media all and (max-width: 530px)
@@ -422,6 +460,28 @@
   margin-left: 25px;
   margin-bottom: 10px;
   }
+  .PlaceAnOrder {
+    width: 55%;
+    padding: 30px 30px 6px 30px;
+  }
+  
+}
+
+@media all and (max-width: 520px)
+{
+  .PlaceAnOrder 
+  {
+    width: 45%;
+    padding: 30px 30px 6px 30px;
+  }
+  .PlaceAnOrderWr
+  {
+    margin: 0;
+  }
+  .avtor
+  {
+    padding-left: 5px;
+  }
 }
 
 @media all and (max-width: 450px)
@@ -433,6 +493,19 @@
   }
 }
 
+@media all and (max-width: 520px)
+{
+  .PlaceAnOrder 
+  {
+    width: 35%;
+    padding: 20px 30px 6px 20px;
+  }
+  .avtor
+  {
+    padding-left: 5px;
+  }
+}
+
 @media all and (max-width: 340px)
 {
   .CategoryBook
@@ -440,6 +513,19 @@
     width: 70%;
     height: 320px;
     margin: 20px 10px 30px 30px;
+  }
+}
+
+@media all and (max-width: 325px)
+{
+  .PlaceAnOrder 
+  {
+    width: 25%;
+    padding: 15px 20px 6px 15px;
+  }
+  .avtor h1
+  {
+    font-size: 16px;
   }
 }
 
@@ -474,6 +560,11 @@
 
 @media all and (max-width: 250px)
 {
+  .PlaceAnOrder 
+  {
+    width: 20%;
+    padding: 5px 15px 6px 5px;
+  }
   .Navigation
   {
     margin-left: 3px;
@@ -483,7 +574,21 @@
   {
     width: 65%;
     height: 310px;
-    margin: 10px 10px 30px 3px;
+  }
+  .btn1
+  {
+    width: 10px;
+    font-size: 10px;
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  .email,
+  .name
+  {
+    width: 100%;
   }
 }
 
@@ -491,7 +596,7 @@
 {
   .CategoryBook
   {
-    width: 60%;
+    width: 55%;
     height: 310px;
     margin: 10px 10px 30px 3px;
   }
@@ -506,7 +611,7 @@
   }
   .CategoryBook
   {
-    width: 60%;
+    width: 55%;
     height: 310px;
     margin: 10px 10px 30px 3px;
   }
